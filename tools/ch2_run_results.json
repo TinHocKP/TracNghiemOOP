@@ -1,0 +1,963 @@
+[
+  {
+    "q_num": 1,
+    "matched": null,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "Phương thức khởi tạo (Constructor)",
+      "Phương thức huỷ (Destructor)",
+      "Phương thức bạn (Friend)",
+      "Phương thức ảo (Virtual)"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, phương thức Rectangle(int w = 0, int h = 0){} được gọi là?\nclass Rectangle {\nprivate:\n       int w;\n       int h;\npublic:\n       Rectangle(int w = 0, int h = 0) {}\n       void output() {}\n       ~Rectangle() {}\n};"
+  },
+  {
+    "q_num": 2,
+    "matched": null,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "Phương thức khởi tạo (Constructor)",
+      "Phương thức hủy (Destructor)",
+      "Phương thức bạn (Friend)",
+      "Phương thức ảo (Virtual)"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, phương thức ~Rectangle(){} được gọi là?\nclass Rectangle {\nprivate:\n       int w;\n       int h;\npublic:\n       Rectangle(int w = 0, int h = 0) {}\n       void output() {}\n       ~Rectangle() {}\n};"
+  },
+  {
+    "q_num": 3,
+    "matched": null,
+    "stdout": "",
+    "opts": [
+      "Geekname is:",
+      "Abhi",
+      "Geekname is:Abhi",
+      "Cả 3 đáp án đều sai"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Geeks {\npublic:\n       string geekname;\n       void printName() {\n             cout << \"Geekname is:\" << geekname;;\n       }\n};\nint main() {\n       Geeks obj; => Tìm constructor\n       obj.geekname = \"Abhi\";\n       return 0;\n}"
+  },
+  {
+    "q_num": 4,
+    "matched": null,
+    "stdout": "RUNTIME_TIMEOUT",
+    "opts": [
+      "Geekname is:",
+      "Abhi",
+      "Geekname is:Abhi",
+      "Lỗi thực thi"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Geeks {\npublic:\n       string geekname;\n       void printName() {\n             cout << \"Geekname is:\" << geekname;\n       }\n};\nint main() {\n       Geeks* obj = NULL;\n       obj->geekname = \"Abhi\";\n       obj->printName();\n       return 0;\n}"
+  },
+  {
+    "q_num": 5,
+    "matched": 0,
+    "stdout": "Geek name is: HITC,Geek id is: 15",
+    "opts": [
+      "Geek name is: HITC,Geek id is: 15",
+      "Geek id is: 15",
+      "Geek id is: 15, Geek name is: HITC",
+      "HITC,Geek id is: 15"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Geeks {\npublic:\n       string geekname;\n       int id;\n       void printName();\n       void printId() {\n             cout << \"Geek id is: \" << id;\n       }\n};\nvoid Geeks::printName() {\n       cout << \"Geek name is: \" << geekname;\n}\nint main() {\n       Geeks obj;\n       obj.geekname = \"HITC\";\n       obj.id = 15;\n       obj.printName();\n       cout << \",\";\n       obj.printId();\n       return 0;\n}"
+  },
+  {
+    "q_num": 6,
+    "matched": 0,
+    "stdout": "Geek id is: -1,Geek id is: 21",
+    "opts": [
+      "Geek id is: -1",
+      "Geek id is: 21",
+      "Geek id is: -1,Geek id is: 21",
+      "Lỗi biên dịch"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Geeks {\npublic:\n       int id;\n       Geeks() {\n             id = -1;\n       }\n       Geeks(int x) {\n             id = x;\n       }\n};\nint main() {\n       Geeks obj1;\n       cout << \"Geek id is: \" << obj1.id;\n       cout << \",\";\n       Geeks obj2(21);\n       cout << \"Geek id is: \" << obj2.id;\n       return 0;\n}"
+  },
+  {
+    "q_num": 7,
+    "matched": null,
+    "stdout": "0 1 2",
+    "opts": [
+      "A.0",
+      "B.1",
+      "C.2",
+      "D.0 1 2"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Geeks\n{\npublic:\n       int id;\n       ~Geeks() {\n             cout << id << \" \";\n       }\n};\nint main() {\n       for (int i = 0; i < 3; i++) {\n             Geeks obj;\n             obj.id = i;\n       }\n       return 0;\n}"
+  },
+  {
+    "q_num": 8,
+    "matched": null,
+    "type": "THEORY",
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?",
+    "opts": [
+      "10",
+      "200",
+      "300 300",
+      "Lỗi thực thi"
+    ]
+  },
+  {
+    "q_num": 9,
+    "matched": 1,
+    "stdout": "Parameterized Constructor: 100 200",
+    "opts": [
+      "Default Constructor",
+      "Parameterized Constructor:",
+      "Parameterized Constructor: 100 200",
+      "100 200"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Demo {\npublic:\n       int a, b;\n       Demo() {\n             cout << \"Default Constructor\" << endl;\n       }\n       Demo(int a, int b) :a(a), b(b) {\n             cout << \"Parameterized Constructor: \" << a << \" \" << b << endl;\n       }\n};\nint main() {\n       Demo d(100, 200);\n       return 0;\n}"
+  },
+  {
+    "q_num": 10,
+    "matched": 0,
+    "stdout": "100 100 200",
+    "opts": [
+      "100",
+      "200",
+      "100 200",
+      "100 100 200"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Demo {\npublic:\n       int a = 0;\n       int b = 0;\n       Demo(int a) {\n             cout << a << \" \";\n       }\n       Demo(int a, int b) :Demo(a) {\n             cout << a << \" \" << b << endl;\n       }\n};\nint main() {\n       Demo d(100, 200);\n       return 0;\n}"
+  },
+  {
+    "q_num": 11,
+    "matched": 3,
+    "stdout": "Radius: 5.5 Area: 94.985",
+    "opts": [
+      "Radius: 94.985",
+      "Radius is: 5.5",
+      "Area is: 94.95",
+      "Radius: 5.5 Area: 94.985"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Circle {\npublic:\n       double radius;\n       double compute_area() {\n             return 3.14 * radius * radius;\n       }\n};\nint main() {\n       Circle obj;\n       obj.radius = 5.5;\n       cout << \"Radius: \" << obj.radius << \" Area: \" << obj.compute_area();\n       return 0;\n}"
+  },
+  {
+    "q_num": 12,
+    "matched": 3,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "Radius: 94.985",
+      "Radius is: 5.5",
+      "Area is: 94.95",
+      "Lỗi biên dịch"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Circle {\nprivate:\n       double radius;\npublic:\n       double  compute_area() {\n             return 3.14 * radius * radius;\n       }\n};\nint main() {\n       Circle obj;\n       obj.radius = 1.5;\n       cout << \"Area is:\" << obj.compute_area();\n       return 0;\n}"
+  },
+  {
+    "q_num": 13,
+    "matched": 0,
+    "stdout": "Radius:1.5 Area:7.065",
+    "opts": [
+      "Radius:1.5",
+      "Area:7.065",
+      "Radius:1.5 Area:7.065",
+      "Lỗi biên dịch"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Circle {\nprivate:\n       double radius;\npublic:\n       void compute_area(double r) {\n             radius = r;\n             double area = 3.14 * radius * radius;\n             cout << \"Radius:\" << radius << \" Area:\" << area;\n       }\n};\nint main() {\n       Circle obj;\n       obj.compute_area(1.5);\n       return 0;\n}"
+  },
+  {
+    "q_num": 14,
+    "matched": null,
+    "stdout": "",
+    "opts": [
+      "rectA.a  = 10;",
+      "RectangleA::a = 10;",
+      "rectA(a  = 10;",
+      "Không có đáp án đúng"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, Lựa chọn nào được viết ở dòng //you code here, để gán giá trị 10 vào biến a\nclass RectangleA\n{\n       int a = 6;\npublic:\n       void display() {\n             cout << a;\n       }\n};\nint main() {\n       RectangleA rectA;\n       //you code here\n       return 0;\n}"
+  },
+  {
+    "q_num": 15,
+    "matched": 1,
+    "stdout": "Hello",
+    "opts": [
+      "Hi",
+      "Hello",
+      "HiHello",
+      "Lỗi biên dịch"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Rectangle {\nprivate:\n       int a;\n       int b;\npublic:\n       Rectangle() {\n             cout << \"Hi\";\n       }\n       Rectangle(int m, int n) {\n             cout << \"Hello\";\n       }\n};\nint main() {\n       Rectangle rect(3, 4);\n       return 0;\n}"
+  },
+  {
+    "q_num": 16,
+    "matched": null,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "Lỗi tại dòng 17, 18",
+      "Lỗi tại dòng 15",
+      "Lỗi tại dòng 19",
+      "Không lỗi ở dòng nào"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, Hãy cho biết chương trình sau có lỗi ở dòng nào:\n1   class RectangleInt\n2   {\n3   private:\n4       int a = 7;\n5       int b = 9;\n6       \n7   };\n8   class RectangleFloat\n9   {   \n10  private:\n11      float x = 6; \n12      float y = 8;\n13      friend void output();\n14  };\n15  void output()\n16  {\n17      RectangleInt obj1;\n18      RectangleFloat obj2;\n19      cout << obj1.a; \n20      cout << obj2.x;\n21  }\n22  int main() {\n23      output();\n24      return 0;\n25  }"
+  },
+  {
+    "q_num": 17,
+    "matched": 0,
+    "stdout": "Hi",
+    "opts": [
+      "Hi",
+      "Hello",
+      "HiHello",
+      "Lỗi biên dịch"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Rectangle {\nprivate:\n       int a;\n       int b;\npublic:\n       Rectangle() {\n              cout << \"Hi\";\n       }\n       Rectangle(int m, int n) {\n             cout << \"Hello\";\n       }\n};\nint main() {\n       Rectangle rect;\n       return 0;\n}"
+  },
+  {
+    "q_num": 18,
+    "matched": 0,
+    "stdout": "Hi",
+    "opts": [
+      "Hi",
+      "Hello",
+      "HiHello",
+      "Lỗi biên dịch"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Rectangle {\nprivate:\n       int a;\n       int b;\npublic:\n       Rectangle() {\n             cout << \"Hi\";\n       }\n       Rectangle(int m, int n) {\n             cout << \"Hello\";\n       }\n};\nint main() {\n       Rectangle* rect = new Rectangle();\n       return 0;\n}"
+  },
+  {
+    "q_num": 19,
+    "matched": 1,
+    "stdout": "Hello",
+    "opts": [
+      "Hi",
+      "Hello",
+      "HiHello",
+      "Lỗi biên dịch"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Rectangle {\nprivate:\n       int a;\n       int b;\npublic:\n       Rectangle() {\n             cout << \"Hi\";\n       }\n       Rectangle(int m, int n) {\n             cout << \"Hello\";\n       }\n};\nint main() {\n       Rectangle* rect = new Rectangle(3, 4);\n       return 0;\n}"
+  },
+  {
+    "q_num": 20,
+    "matched": 1,
+    "stdout": "Hello",
+    "opts": [
+      "Hi",
+      "Hello",
+      "HiHello",
+      "Lỗi biên dịch"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Rectangle {\nprivate:\n       int a;\n       int b;\npublic:\n       Rectangle() {\n             cout << \"Hi\";\n       }\n       Rectangle(int m, int n) {\n             cout << \"Hello\";\n       }\n};\nint main() {\n       Rectangle* rect = new Rectangle(3, 4);\n       return 0;\n}"
+  },
+  {
+    "q_num": 21,
+    "matched": 3,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "Hi",
+      "Hello",
+      "HiHello",
+      "Lỗi biên dịch"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Rectangle {\nprivate:\n    int a;\n    int b;\npublic:\n    Rectangle() {\n        cout << \"Hi\";\n    }\n    Rectangle(int m, int n):Rectangle {\n        cout << \"Hello\";\n    }\n};\nint main() {\n    Rectangle *rect= new Rectangle(3);\n    return 0;\n}"
+  },
+  {
+    "q_num": 22,
+    "matched": null,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "Lỗi tại dòng int x;",
+      "Lỗi tại dòng obj.y=8;",
+      "Lỗi tại dòng A.obj;",
+      "Lỗi tại dòng obj.x=10;"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch chương trình, lỗi tại dòng nào?\nclass A{\nprivate:\n    int x;\npublic:\n    int y;\n};\nvoid main()\n{\n    A obj;\n    obj.x = 10;\n    obj.y = 8;\n}"
+  },
+  {
+    "q_num": 23,
+    "matched": null,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "Chưa khai báo x",
+      "Không thể truy cập vào thành phần private của lớp",
+      "Không xác định được giá trị x",
+      "Phải gọi thông qua tên lớp không được gọi thông qua tên đối tượng"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch chương trình, lỗi tại obj.x=10, nguyên nhân của lỗi này là?\nclass A{\nprivate:\n    int x;\npublic:\n    int y;\n};\nvoid main(){\n    A obj;\n    obj.x = 10;\n    obj.y = 8;\n}"
+  },
+  {
+    "q_num": 24,
+    "matched": null,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "Phương thức khởi tạo (Constructor)",
+      "Phương thức huỷ (Destructor)",
+      "Phương thức bạn (Friend)",
+      "Phương thức ảo (Virtual)"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ Java như sau, phương thức Rectangle(){} được gọi là?\npublic class Rectangle\n{\n    private int w;\n    private int h;\n    public Rectangle(){}\n    public Rectangle(int w, int h){}\n    void output(){} \n}"
+  },
+  {
+    "q_num": 25,
+    "matched": 0,
+    "stdout": "x = 0 y = 0",
+    "opts": [
+      "x = 0",
+      "y = 0",
+      "x = 0 y = 0",
+      "y = 0 x = 0"
+    ],
+    "text": "class Point\n{\n    int x, y;\npublic:\n    Point(int i = 0, int j = 0)\n    {\n        x = i;\n        y = j;\n    }\n    int getX() { return x; }\n    int getY() { return y; }\n};\nint main()\n{\n    Point p1;\n    Point p2 = p1;\n    cout << \"x = \" << p2.getX() << \" y = \" << p2.getY();\n    return 0;\n}"
+  },
+  {
+    "q_num": 26,
+    "matched": 3,
+    "stdout": "x = 6 y = 8",
+    "opts": [
+      "x = 0",
+      "y = 0",
+      "x = 0 y = 0",
+      "x = 6 y = 8"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Point {\n    int x, y;\npublic:\n    Point(int i = 0, int j = 0) {\n        x = i;\n        y = j;\n    }\n    int getX() { return x; }\n    int getY() { return y; }\n};\nint main(){\n    Point p1(6,8);\n    Point p2 = p1;\n    cout << \"x = \" << p2.getX() << \" y = \" << p2.getY();\n    return 0;\n}"
+  },
+  {
+    "q_num": 27,
+    "matched": null,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "3",
+      "5",
+      "3 5",
+      "5 3"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nint i;\nclass A {\n    int i = 5;\npublic:\n    ~A() { \n        i = 10; \n    }\n};\nint foo(){\n    i = 3;\n    A ob;\n    return i;\n}\nint main(){\n    cout << foo() << endl;\n    return 0;\n}"
+  },
+  {
+    "q_num": 28,
+    "matched": null,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      ".Dòng 1",
+      ".Dòng 2",
+      ".Dòng 3",
+      ".Lỗi ở cả 3 dòng"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch chương trình, lỗi ở dòng nào?\nclass POINT {\n    int x, y;\npublic:\n    void input();\n};\nclass HCN {\n    POINT p; //Dòng 1\n    int d, r;\npublic:\n    void input() {\n        cout <<\"d, r =\"; cin >> d, r;//Dòng 2\n        cout <<\"x, y =\"; cin >> p.x, p.y;//Dòng 3\n    }\n};"
+  },
+  {
+    "q_num": 29,
+    "matched": null,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      ".4",
+      "0",
+      "Lỗi biên dịc",
+      ".Lỗi thực thi"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Game {\nprivate:\n    int n = 0;\n    Game(int x){\n        n = x;\n    }\npublic:\n    void print() { \n        cout << n; \n    }\n};\nvoid main() {\n    Game pt(4);\n    pt.print();\n}"
+  },
+  {
+    "q_num": 30,
+    "matched": 1,
+    "stdout": "Contructor 2",
+    "opts": [
+      "Tùy chọn 1",
+      "Contructor",
+      "Lỗi biên dịc",
+      "Lỗi thực thi"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Sum{\nprivate:\n    int  a, b;\npublic:\n    Sum (){ \n        cout << \"Contructor 1\";\n    }\n    Sum (int m, int n){\n        cout << \"Contructor 2\";\n    }\n};\nvoid main(){\n    Sum (3,6);\n}"
+  },
+  {
+    "q_num": 31,
+    "matched": 1,
+    "stdout": "Contructor 2",
+    "opts": [
+      "Contructor 1",
+      "Contructor 2",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Sum{\nprivate:\n    int  a, b;\npublic:\n    Sum(){  \n        cout << \"Contructor 1\";\n    }\n    Sum(int m, int n){\n        cout << \"Contructor 2\";\n    }\n};\nvoid main(){\n    Sum *t = new Sum(3,6);\n}"
+  },
+  {
+    "q_num": 32,
+    "matched": 0,
+    "stdout": "Contructor 1",
+    "opts": [
+      "Contructor 1",
+      "Contructor 2",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass  Sum{\nprivate:\n    int  a, b;\npublic:\n    Sum(){  \n        cout << \"Contructor 1\";\n    }\n    Sum(int m, int n){\n        cout << \"Contructor 2\";\n    }\n};\nvoid main(){\n    Sum *t = new Sum();\n}"
+  },
+  {
+    "q_num": 33,
+    "matched": 0,
+    "stdout": "Contructor 1  Contructor 2",
+    "opts": [
+      "Contructor 1",
+      "Contructor 2",
+      "Contructor 1 Contructor 2",
+      "Contructor 2 Contructor 1"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass  Sum {\nprivate:\n    int  a, b;\npublic:\n    Sum() {\n        cout << \" Contructor 1 \";\n    }\n    Sum(int m, int n) {\n        Sum();\n        cout << \" Contructor 2 \";\n    }\n};\nvoid main() {\n    Sum* t = new Sum( 3,6);\n}"
+  },
+  {
+    "q_num": 34,
+    "matched": null,
+    "type": "THEORY",
+    "text": "Cho chương trình viết bằng ngôn ngữ C++, Định nghĩa hàm constructor nào là đúng?",
+    "opts": [
+      "Một hàm dùng để hủy đối tượng.",
+      "Một hàm dùng để sao chép đối tượng.",
+      "Một hàm dùng để khởi tạo đối tượng.",
+      "Một hàm dùng để so sánh hai đối tượng."
+    ]
+  },
+  {
+    "q_num": 35,
+    "matched": null,
+    "stdout": "16",
+    "opts": [
+      "Chương trình thực thi xuất ra màn hình: 16",
+      "Lỗi thực thi",
+      "Lỗi biên dịch",
+      "Chương trình thực thi mà không xuất gì ra màn hình"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass MyClass {\nprivate:\n    int n;\npublic:\n    MyClass() \n    {\n         n = 16; \n    }\n    void hienThi() \n    { \n        cout << n; \n    }\n};\nvoid main() {\n    MyClass t;\n    t.hienThi();\n}"
+  },
+  {
+    "q_num": 36,
+    "matched": 0,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "Lỗi biên dịch",
+      "Chương trình thực thi xuất ra màn hình: 5",
+      "Chương trình thực thi mà không xuất gì ra màn hình",
+      "Chương trình thực thi xuất ra màn hình: 16"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass MyClass {\n    int n;\npublic:\n    MyClass(int x) \n    { \n        n = x; \n    }\n    void Print() \n    { \n        cout << n; \n    }\n};\nvoid main() {\n    MyClass t(5);\n    t.n = 14;\n    t.Print();\n}"
+  },
+  {
+    "q_num": 37,
+    "matched": null,
+    "stdout": "3 4",
+    "opts": [
+      "Xuất ra màn hình : 3",
+      "Xuất ra màn hình : 3 3 4",
+      "Xuất ra màn hình : 3 4",
+      "Xuất ra màn hình : 3 4 4"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass AAA {\n    int na;\npublic :\n        AAA(int a=0) {\n            na = a ;\n        }\n        ~AAA() {cout<< \" \"<<na ;}\n};\nvoid Func(const AAA &aaa) {\n    AAA *a1 = new AAA(3);\n    delete a1;\n}\nvoid main() {\n    AAA aaa(4); \n    Func(aaa);\n}"
+  },
+  {
+    "q_num": 38,
+    "matched": null,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "objA và objB truy cập được tất cả các biến",
+      "objA truy cập được tất cả các biến. objB truy cập được các biến x,y",
+      "objA và objB chỉ truy cập được các biến a,b",
+      "objA và objB chỉ truy cập được các biến x,y"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Lop1\n{\nprivate:\n    int a,b;\npublic:\n    float x,y;\n    friend class Lop2;\n    friend class Lop3;\n};\nclass Lop2\n{\n    Lop1 objA;\n};\n \nclass Lop3\n{\n    Lop1 objB;\n};"
+  },
+  {
+    "q_num": 39,
+    "matched": null,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "MyClass *me = new MyClass();",
+      "MyClass *me = new MyClass(1, 20);",
+      "MyClass *me = new MyClass(1, 20, 30);",
+      "Tất cả đều đúng"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass MyClass{\npublic:\n    MyClass(int i = 0, int j = 0, float k = 0);\n};"
+  },
+  {
+    "q_num": 40,
+    "matched": 0,
+    "stdout": "Derive class Base class",
+    "opts": [
+      "Derive class Base class",
+      "Derive class",
+      "Base class Derive class",
+      "Base class"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Base{\npublic:\n    Base(){}\n    ~Base()\n    { cout << \"Base class \"; }\n};\nclass Derive :Base\n{\npublic:\n    Derive(){}\n    ~Derive()\n    { cout << \"Derive class \"; }\n};\nint main(){\n    Derive d;\n    return 0;\n}"
+  },
+  {
+    "q_num": 41,
+    "matched": 0,
+    "stdout": "Radius=1.2 Area=4.5239 Color=blue",
+    "opts": [
+      "Radius=1.2 Area=4.5239 Color=blue",
+      "Radius=3.4 Area=36.3169 Color=red",
+      "Radius=1 Area=3.1416 Color=red",
+      "Cả 3 câu đều sai"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? \nclass Circle {\nprivate:\n    double radius;\n    string color;\npublic:\n    Circle(double r = 1.0, string c = \"red\") {\n        radius = r;\n        color = c;\n    }\n    double getRadius() {\n        return radius;\n    }\n    string getColor() {\n        return color;\n    }\n    double getArea() {\n        return radius * radius * 3.1416;\n    }\n};\nint main() {\n    Circle c1(1.2, \"blue\");\n    cout << \"Radius=\" << c1.getRadius() << \" Area=\" << c1.getArea()\n        << \" Color=\" << c1.getColor() << endl;\n    return 0;\n}"
+  },
+  {
+    "q_num": 42,
+    "matched": 1,
+    "stdout": "Radius=3.4 Area=36.3169 Color=red",
+    "opts": [
+      "Radius=1.2 Area=4.5239 Color=blue",
+      "Radius=3.4 Area=36.3169 Color=red",
+      "Radius=1 Area=3.1416 Color=red",
+      "Cả 3 câu đều sai"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Circle {\nprivate:\n    double radius;\n    string color;\npublic:\n    Circle(double r = 1.0, string c = \"red\");\n    double getRadius();\n    string getColor();\n    double getArea();\n};\nCircle::Circle(double r, string c) {\n    radius = r;\n    color = c;\n}\ndouble Circle::getRadius() {\n    return radius;\n}\nstring Circle::getColor() {\n    return color;\n}\ndouble Circle::getArea() {\n    return radius*radius*3.1416;\n}\nint main() {\n    Circle c2(3.4);\n    cout << \"Radius=\" << c2.getRadius() << \" Area=\" << c2.getArea()\n        << \" Color=\" << c2.getColor() << endl;\n    return 0;\n}"
+  },
+  {
+    "q_num": 43,
+    "matched": null,
+    "stdout": "area: 100",
+    "opts": [
+      "area:20",
+      "area:5",
+      "area:100",
+      "area:25"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Rectangle {\n    int x, y;\npublic:\n    void setValues(int a, int b);\n    int area();\n};\nvoid Rectangle::setValues(int a, int b) {\n    x = a;\n    y = b;\n}\nint Rectangle::area() {\n    return (x*y);\n}\nint main() {\n    Rectangle *rect = new Rectangle();\n    rect->setValues(5, 20);\n    cout << \"area: \" << rect->area();\n    delete rect;\n    return 0;\n}"
+  },
+  {
+    "q_num": 44,
+    "matched": 2,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "area:20",
+      "area:5",
+      "Lỗi biên dịch tại dòng rect.setValues(5, 20);",
+      "area:25"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Rectangle {\n    int x, y;\npublic:\n    void setValues(int a, int b);\n    int area();\n};\nvoid Rectangle::setValues(int a, int b) {\n    x = a;\n    y = b;\n}\nint Rectangle::area() {\n    return (x*y);\n}\nint main() {\n    Rectangle *rect = new Rectangle();\n    rect.setValues(5, 20);\n    cout << \"area: \" << rect.area();\n    delete rect;\n    return 0;\n}"
+  },
+  {
+    "q_num": 45,
+    "matched": 2,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "area a:12",
+      "area a:3",
+      "Lỗi biên dịch do lớp Rectangle chưa cài đặt Constructor hai tham số",
+      "area a:7"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? \nclass Rectangle {\n    int width, height;\npublic:\n    Rectangle(int, int);\n    int area();\n};\nint Rectangle::area() {\n    return (width*height);\n}\nint main() {\n    Rectangle recta(3, 4);\n    cout << \"area a:\" << recta.area();\n    return 0;\n}"
+  },
+  {
+    "q_num": 46,
+    "matched": 0,
+    "stdout": "area a:12 area b:30",
+    "opts": [
+      "area a:12 area b:30",
+      "area a:30 area b:30",
+      "area a:30 area b:12",
+      "Lỗi biên dịch do lớp Rectangle chưa cài đặt Constructor hai tham số"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? \nclass Rectangle {\n    int width, height;\npublic:\n    Rectangle(int, int);\n    int area();\n};\nRectangle::Rectangle(int a, int b) {\n    width = a;\n    height = b;\n}\nint Rectangle::area() {\n    return (width*height);\n}\nint main() {\n    Rectangle recta(3, 4);\n    Rectangle rectb(5, 6);\n    cout << \"area a:\" << recta.area() << \" area b:\" << rectb.area();\n    return 0;\n}"
+  },
+  {
+    "q_num": 47,
+    "matched": null,
+    "stdout": "area a:12area b:25",
+    "opts": [
+      "Kế thừa",
+      "Trừu tượng",
+      "Chồng hàm khởi tạo",
+      "Quá tải hàm khởi tạo"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau. Đoạn chương trình có tính chất gì?\nclass Rectangle {\n    int width, height;\npublic:\n    Rectangle();\n    Rectangle(int, int);\n    int area();\n};\nRectangle::Rectangle() {\n    width = 5;\n    height = 5;\n}\nRectangle::Rectangle(int a, int b) {\n    width = a;\n    height = b;\n}\nint Rectangle::area() {\n    return (width*height);\n}\nint main() {\n    Rectangle recta(3, 4);\n    Rectangle rectb;\n    cout << \"area a:\" << recta.area();\n    cout << \"area b:\" << rectb.area();\n    return 0;\n}"
+  },
+  {
+    "q_num": 48,
+    "matched": null,
+    "stdout": "area: 100",
+    "opts": [
+      "Stack",
+      "BSS",
+      "Data",
+      "Heap"
+    ],
+    "text": "Đối tượng rect sẽ được lưu trữ ở vùng nhớ nào khi chương trình thực thi?\nclass Rectangle {\n    int x, y;\npublic:\n    void setValues(int a, int b);\n    int area();\n};\nvoid Rectangle::setValues(int a, int b) {\n    x = a;\n    y = b;\n}\nint Rectangle::area() {\n    return (x*y);\n}\nint main() {\n    Rectangle *rect = new Rectangle();\n    rect->setValues(5, 20);\n    cout << \"area: \" << rect->area();\n    delete rect;\n    return 0;\n}"
+  },
+  {
+    "q_num": 49,
+    "matched": 3,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "area a:12",
+      "area a:3",
+      "area a:4",
+      "Lỗi biên dịch tại hàm area() {  return (width*height); }"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? \nclass Rectangle {\n    int *width, *height;\npublic:\n    Rectangle(int, int);\n    int area();\n};\nRectangle::Rectangle(int a, int b) {\n    width = new int;\n    height = new int;\n    width = a;\n    height = b;\n}\nint Rectangle::area() {\n    return (width*height);\n}\nint main() {\n    Rectangle recta(3, 4);\n    cout << \"area a:\" << recta.area();\n    return 0;\n}"
+  },
+  {
+    "q_num": 50,
+    "matched": null,
+    "stdout": "Area a: 12 Area b: 12",
+    "opts": [
+      "Area a:12 Area b:100",
+      "Area a:12 Area b:12",
+      "Area a:100 Area b:100",
+      "Area a:100 Area b:12"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Rectangle {\n    int w, h;\npublic:\n    Rectangle(int a, int b);\n    void setValues(int a, int b);\n    int area();\n};\nRectangle::Rectangle(int a, int b){\n    w = a;\n    h = b;\n}\nvoid Rectangle::setValues(int a, int b) {\n    w = a;\n    h = b;\n}\nint Rectangle::area() {\n    return (w*h);\n}\nint main() {\n    Rectangle recta(5,20);\n    Rectangle *rectb;\n    rectb = &recta;\n    rectb->setValues(3, 4); \n    cout << \"Area a: \" << recta.area() << \" Area b: \" << rectb->area();\n    return 0;\n}"
+  },
+  {
+    "q_num": 51,
+    "matched": 3,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "Area a:20 Area b:100",
+      "Area a:5 Area b:100",
+      "Area a:100 Area b:100",
+      "Lỗi biên dịch tại rectb.area()"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Rectangle {\n    int w, h;\npublic:\n    void setValues(int a, int b);\n    int area();\n};\nvoid Rectangle::setValues(int a, int b) {\n    w = a;\n    h = b;\n}\nint Rectangle::area() {\n    return (w*h);\n}\nint main() {\n    Rectangle recta;\n    Rectangle *rectb = new Rectangle();\n    recta.setValues(5, 20);\n    rectb = &recta;\n    cout << \"Area a: \" << rectb.area() << \"Area b: \" << recta.area();\n    return 0;\n}"
+  },
+  {
+    "q_num": 52,
+    "matched": null,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "Stack",
+      "BSS",
+      "Data",
+      "Heap"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, đối tượng rect trong hàm main sẽ được lưu trữ ở vùng nhớ nào khi chương trình thực thi?\nclass Rectangle {\n    int x, y;\npublic:\n    void setValues(int a, int b);\n    int area();\n};\nvoid Rectangle::setValues(int a, int b) {\n    x = a;\n    y = b;\n}\nint Rectangle::area() {\n    return (x*y);\n}\nint main() {\n    Rectangle rect;\n    rect.setValues(5, 20);\n    cout << \"area: \" << rect.area();    \n    delete rect;\n    return 0;\n}"
+  },
+  {
+    "q_num": 53,
+    "matched": null,
+    "stdout": "area a:12area b:25",
+    "opts": [
+      "Chồng hàm (override)",
+      "Quá tải hàm (overload)",
+      "Hàm khởi tạo (constructor)",
+      "Hàm hủy (destructor)"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, Hàm setValues trong lớp Rectangle có đặc điểm gì?\nclass Rectangle {\n       int width, height;\npublic:\n       Rectangle();\n       Rectangle(int, int);\n       int area();\n       void setValues(int w, int h);\n       void setValues();\n};\nRectangle::Rectangle() {\n       width = 5;\n       height = 5;\n}\nRectangle::Rectangle(int a, int b) {\n       width = a;\n       height = b;\n}\nvoid Rectangle::setValues(int w, int h) {\n       width = w;\n       height = h;\n}\nvoid Rectangle::setValues() {\n       width = 0;\n       height = 0;\n}\nint Rectangle::area() {\n       return (width * height);\n}\nint main() {\n       Rectangle recta(3, 4);\n       Rectangle rectb;\n       cout << \"area a:\" << recta.area();\n       cout << \"area b:\" << rectb.area();\n       return 0;\n}"
+  },
+  {
+    "q_num": 54,
+    "matched": 1,
+    "stdout": "10",
+    "opts": [
+      "5",
+      "10",
+      "0",
+      "Lỗi thực thi tại dòng lệnh delete data;"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Array {\n       int* data;\n       int size;\npublic:\n       Array(int s) {\n             size = s;\n             data = new int[size];\n       }\n       ~Array() {\n             delete data;\n       }\n       void out() {\n             cout << size;\n       }\n};\nvoid main() {\n       Array a1(10);\n       a1.out();\n}"
+  },
+  {
+    "q_num": 55,
+    "matched": 0,
+    "stdout": "Constructor...Out...Destructor...Destructor...",
+    "opts": [
+      "Constructor...Out...Destructor...Destructor...",
+      "Constructor...Out...Destructor...",
+      "Constructor...Out...",
+      "Lỗi biên dịch do lớp Array không có hàm hủy (Destructor)"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Array {\n       int size;\npublic:\n       Array(int s) {\n             size = s;\n             cout << \"Constructor...\";\n       }\n       ~Array() {\n             cout << \"Destructor...\";\n       }\n};\nvoid out() {\n       Array a1(10);\n       Array a2 = a1;\n       cout << \"Out...\";\n}\nvoid main() {\n       out();\n}"
+  },
+  {
+    "q_num": 56,
+    "matched": null,
+    "stdout": "RUNTIME_TIMEOUT",
+    "opts": [
+      "10",
+      "5",
+      "0",
+      "Lỗi thực thi"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nĐoạn lệnh sau sai ở đâu, lý do tại sao, cách sửa lại cho đúng\nclass Array {\n       int* data;\n       int size;\npublic:\n       Array(int s) {\n             size = s;\n             data = new int[size];\n       }\n       ~Array() {\n             delete data;\n       }\n       void out() {\n             cout << size * 2;\n       }\n};\nvoid main() {\n       Array a1(10);\n       Array a2 = a1;\n       a2.out();\n}"
+  },
+  {
+    "q_num": 57,
+    "matched": 0,
+    "stdout": "Constructor...Out...Destructor...Destructor...",
+    "opts": [
+      "Constructor...Out...Destructor...Destructor...",
+      "Constructor...Out...Destructor...",
+      "Constructor...Out...",
+      "Lỗi biên dịch do lớp Array không có hàm hủy (Destructor)"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Array {\n       int size;\npublic:\n       Array(int s) {\n             size = s;\n             cout << \"Constructor...\";\n       }\n       ~Array() {\n             cout << \"Destructor...\";\n       }\n};\nvoid out() {\n       Array a1(10);\n       Array a2 = a1;\n       cout << \"Out...\";\n}\nvoid main() {\n       out();\n}"
+  },
+  {
+    "q_num": 58,
+    "matched": null,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "Dòng 9 - do sai lỗi cú pháp",
+      "Dòng 11 - do sai lỗi cú pháp",
+      "Dòng 15 - do không có hàm khởi tạo với tham số tương ứng",
+      "Dòng 17 - do không có toán tử gán = trong định nghĩa lớp"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch, chương trình trên sẽ bị lỗi biên dịch tại dòng nào?\n1 class A {\n2 private:\n3    int x;\n     int  y;\n4 public:\n5   A(int x1, int y1);\n6   void In();  \n7 };\n8 A::A(int x1, int y1) {\n9   x = x1; \n    y = y1;\n10 }\n11 void A::In() {\n12  cout << x << y;\n13 }\n14 void main() {\n15  A a1(1);\n16  A a2(20, 10);\n17  a1 = a2;\n18  a1.In();\n19 }"
+  },
+  {
+    "q_num": 59,
+    "matched": 3,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "10...10",
+      "20...10",
+      "20...20",
+      "Lỗi biên dịch (lỗi do truy cập đến thành phần private của lớp A)"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass A {\nprivate:\n       int x;\n       int y;\npublic:\n       A(int x1, int y1) {\n             x = x1;\n             y = y1;\n       }\n       void In() {\n             cout << x << \"...\" << y;\n       }\n};\nvoid main()\n{\n       A a(10, 10);\n       a.x += 10;\n       a.y = a.x;\n       a.In();\n}"
+  },
+  {
+    "q_num": 60,
+    "matched": null,
+    "type": "THEORY",
+    "text": "Giới hạn truy xuất nào không có trong các lớp của C++",
+    "opts": [
+      "public",
+      "private",
+      "protected",
+      "hidden"
+    ]
+  },
+  {
+    "q_num": 61,
+    "matched": null,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "display()",
+      "Test()",
+      "~Test()",
+      "Không có phương thức hủy (Destructor)"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, Trong lớp Test phương thức nào được gọi là phương thức hủy (Destructor)? \nclass Test {\npublic:\n       int n;\nprivate:\n       void display() {\n             cout << n;\n       }\npublic:\n       Test() {\n             n = 5;\n       }\n       ~Test() {\n             n = 0;\n       }\n};"
+  },
+  {
+    "q_num": 62,
+    "matched": null,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "display()",
+      "Test()",
+      "~Test()",
+      "Không có phương thức khởi tạo (Contructor)"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, Trong lớp Test phương thức nào được gọi là phương thức khởi tạo (Contructor)? \nclass Test {\npublic:\n       int n;\nprivate:\n       void display() {\n             cout << n;\n       }\npublic:\n       Test() {\n             n = 5;\n       }\n       ~Test() {\n             n = 0;\n       }\n};"
+  },
+  {
+    "q_num": 63,
+    "matched": 2,
+    "stdout": "COMPILE_ERROR",
+    "opts": [
+      "5",
+      "Chương trình thực thi mà không xuất gì ra màn hình.",
+      "Lỗi biên dịch tại lệnh t.Display do hàm Display có thuộc tính private",
+      "Lỗi thực thi do đối tượng t chưa được cấp phát vùng nhớ"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? \nclass Test {\npublic:\n       int n;\nprivate:\n       void Display() {\n             cout << n;\n       }\npublic:\n       Test() {\n             n = 5;\n       }\n};\nvoid main() {\n       Test t;\n       t.Display();\n}"
+  },
+  {
+    "q_num": 64,
+    "matched": null,
+    "stdout": "(5,0 )",
+    "opts": [
+      "(5,0)",
+      "(5,5)",
+      "(0,5)",
+      "Lỗi do tạo đối tượng không đúng"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? \nclass Point {\n       int xVal, yVal;\npublic:\n       Point(int x = 0, int y = 0) {\n             xVal = x;\n             yVal = y;\n       }\n       void Print() {\n             cout << \" (\" << xVal << \",\" << yVal << \" )\";\n       }\n};\nvoid main() {\n       Point pt(5);\n       pt.Print();\n}"
+  },
+  {
+    "q_num": 65,
+    "matched": null,
+    "stdout": "So thuc  (5,0 )",
+    "opts": [
+      "(5,0)",
+      "(5,5)",
+      "(0,0)",
+      "Lỗi biên dịch tại pt.Print(); do phương thức Print có thuộc tính public"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? \nclass Point {\n       int xVal, yVal;\npublic:\n       Point(int x = 0, int y = 0) {\n             xVal = x;\n             yVal = y;\n             cout << \"So nguyen \";\n       }\n       Point(double x = 0, double y = 0) {\n             xVal = x;\n             yVal = y;\n             cout << \"So thuc \";\n       }\n       void Print();\n};\nvoid Point::Print() {\n       cout << \" (\" << xVal << \",\" << yVal << \" )\";\n}\nint main() {\n       Point pt(5.7);\n       pt.Print();\n       return 0;\n}"
+  },
+  {
+    "q_num": 66,
+    "matched": 0,
+    "stdout": "4",
+    "opts": [
+      "4",
+      "0",
+      "Lỗi biên dịch tại pt.Print(); do phương thức Print có thuộc tính public",
+      "Không xuất gì ra màn hình."
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? \nclass Point {\n       int n;\npublic:\n       Point(int x) {\n             n = x;\n       }\n       void Print() {\n             cout << n;\n       }\n};\nvoid main() {\n       Point pt(4);\n       pt.Print();\n}"
+  },
+  {
+    "q_num": 67,
+    "matched": 1,
+    "stdout": "4",
+    "opts": [
+      "Lỗi biên dịch tại test.Test::Print(); do gọi phương thức Print sai",
+      "4",
+      "0",
+      "Không xuất gì ra màn hình."
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? \nclass Test {\n    int t;\npublic:\n    Test(int t) {\n        Test::t = t;\n    }\n    void Print() {\n        cout << t;\n    }\n};\nvoid main() {\n    Test test(4);\n    test.Test::Print();\n}"
+  },
+  {
+    "q_num": 68,
+    "matched": 0,
+    "stdout": "0 1 2 3",
+    "opts": [
+      "0 1 2 3",
+      "1 2 3 4",
+      "1 1 1 1",
+      "0 1 3 2"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? \nclass Teacher {\npublic:\n    static int n;\n    Teacher (){ \n        cout<<\" \"<<n++ ; \n    }\n};\nint Teacher::n = 0;\nint main() {\n    Teacher t1;\n    Teacher t2;\n    Teacher t3;\n    cout<<\" \"<<t1.n ;\n    return 0;\n}"
+  },
+  {
+    "q_num": 69,
+    "matched": null,
+    "stdout": "ID: 001 Name: Tom Age: 20",
+    "opts": [
+      "ID:001 Name:Tome Age:20",
+      "Lỗi thực thi do đối tượng e chưa được cấp phát vùng nhớ",
+      "Lỗi biên dịch do lớp Employee không có hàm khởi tạo 3 tham số",
+      "Không xuất gì ra màn hình."
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? \nclass Employee {\n    char name[30];\n    char id[10];\n    int age;\npublic:\n    Employee(const char n[], const char i[], int a) : age(a) {\n        strcpy_s(name, n);\n        strcpy_s(id, i);\n    }\n    void Display() {\n        cout << \"ID: \" << id << \" Name: \" << name << \" Age: \" << age << endl;\n    }\n};\nint main() {\n    Employee e(\"Tom\", \"001\", 20);\n    e.Display();\n    return 0;\n}"
+  },
+  {
+    "q_num": 70,
+    "matched": null,
+    "stdout": "Constructor Rect... Rect a...Destructor Rect.",
+    "opts": [
+      "Constructor Rect...Rect a...Destructor Rect",
+      "Constructor Rect...Rect a...",
+      "Constructor Rect...Destructor Rect.",
+      "Rect a..."
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Rectangle {\n    int *width, *height;\npublic:\n    Rectangle(int, int);\n    ~Rectangle();\n    int area();\n};\nRectangle::Rectangle(int a, int b) {\n    cout << \"Constructor Rect...\";\n}\nRectangle:: ~Rectangle(){\n    cout << \"Destructor Rect.\";\n}\nint Rectangle::area() {\n    return (*width)*(*height);\n}\nint main() {\n    Rectangle recta(3, 4);\n    cout << \" Rect a...\";\n    return 0;\n}"
+  },
+  {
+    "q_num": 71,
+    "matched": 2,
+    "stdout": "Rect a...Destructor Rect.",
+    "opts": [
+      "Constructor Rect...Rect a...Destructor Rect.",
+      "Constructor Rect...Rect a...",
+      "Rect a...Destructor Rect.",
+      "Rect a..."
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Rectangle {\n    int *width;\n    int *height;\npublic:\n    Rectangle();\n    Rectangle(int, int);\n    ~Rectangle();\n    int area();\n};\nRectangle::Rectangle() {\n}\nRectangle::Rectangle(int a, int b) {\n    cout << \"Constructor Rect...\";\n}\nRectangle:: ~Rectangle(){\n    cout << \"Destructor Rect.\";\n}\nint Rectangle::area() {\n    return (*width)*(*height);\n}\nint main() {\n    Rectangle recta;\n    cout << \" Rect a...\";\n    return 0;\n}"
+  },
+  {
+    "q_num": 72,
+    "matched": 1,
+    "stdout": "11",
+    "opts": [
+      "5",
+      "11",
+      "6",
+      "56",
+      "65"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Add\n{\n    int x;\n    int y;\n    int z;\npublic:\n    void getdata()\n    {\n        x = 5;\n        y = 6;      \n    }\n    void calculate(void);\n    void display(void);\n};\nvoid Add::calculate()\n{\n    z = x + y;\n}\nvoid Add::display()\n{\n    cout << z;\n}\nvoid main()\n{\n    Add a;\n    a.getdata();\n    a.calculate();\n    a.display();\n}"
+  },
+  {
+    "q_num": 73,
+    "matched": 3,
+    "stdout": "Time is 6:15",
+    "opts": [
+      "Time is 6:30",
+      "Time is 2:45",
+      "Time is 3:30",
+      "Time is 6:15"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Time\n{\n    int hours, minutes;\npublic:\n    void gettime(int h, int m)\n    {\n        hours = h;\n        minutes = m;\n    }\n    void sum(Time, Time);\n    void display(void);\n};\nvoid Time::sum(Time t1, Time t2)\n{\n    minutes = t1.minutes + t2.minutes;\n    hours = minutes / 60;\n    minutes = minutes % 60;\n    hours = hours + t1.hours + t2.hours;\n}\nvoid Time::display()\n{\n    cout << hours << \":\" << minutes << endl;\n}\nvoid main()\n{\n    Time T1, T2, T3;\n    T1.gettime(2, 45);\n    T2.gettime(3, 30);\n    T3.sum(T1, T2);\n    cout << \"Time is \";\n    T3.display();\n}"
+  },
+  {
+    "q_num": 74,
+    "matched": 2,
+    "stdout": "11",
+    "opts": [
+      "5",
+      "6",
+      "11",
+      "10"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?\nclass Add\n{\n    int x, y, z;\npublic:\n    Add(int, int);\n    void calculate(void);\n    void display(void);\n};\nAdd::Add(int a, int b)\n{\n    x = a;\n    y = b;\n}\nvoid Add::calculate()\n{\n    z = x + y;\n}\nvoid Add::display()\n{\n    cout << z;\n}\nvoid main()\n{\n    Add a(5, 6);\n    a.calculate();\n    a.display();\n}"
+  },
+  {
+    "q_num": 75,
+    "matched": 0,
+    "stdout": "5",
+    "opts": [
+      "5",
+      "Lỗi biên dịch.",
+      "Chương trình th",
+      "0"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? \nclass Test {\npublic: \n    int n;\n    void Display(){ \n        cout<<n; \n    }\n    public: Test(){ \n        n=5; \n    }\n};\nvoid main() {\n    Test t;\n    t.Display();\n}"
+  },
+  {
+    "q_num": 76,
+    "matched": 3,
+    "stdout": "5",
+    "opts": [
+      "10",
+      "Lỗi biên dịch.",
+      "Chương trình thực thi mà không xuất gì ra màn hình.",
+      "5"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? \nclass ABC {\n    int n;\npublic: \n      ABC(int x){\n        n=x; \n    }\n    void Print(){ \n        cout<<n; \n    }\n};\nvoid main() {\n    ABC t(5);\n    t.Print();\n}"
+  },
+  {
+    "q_num": 77,
+    "matched": 3,
+    "stdout": "10",
+    "opts": [
+      "5",
+      "Lỗi biên dịch.",
+      "Chương trình thực thi mà không xuất gì ra màn hình.",
+      "10"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? \nclass ABC {\n       int n;\npublic:\n       ABC(int x) {\n             n = x;\n       }\n       void Print() {\n             cout << n;\n       }\n};\nvoid main() {\n       ABC t(10);\n       t.Print();\n}"
+  },
+  {
+    "q_num": 78,
+    "matched": 0,
+    "stdout": "(5,0)",
+    "opts": [
+      "(5,0)",
+      "(0,5)",
+      "(5,5)",
+      "(0,0)"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? \nclass Point {\n       int xVal, yVal;\npublic:\n       Point(int x = 0, int y = 0) {\n             xVal = x;\n             yVal = y;\n       }\n       void Print() {\n             cout << \"(\" << xVal << \",\" << yVal << \")\";\n       }\n};\nvoid main() {\n       Point pt(5);\n       pt.Print();\n}"
+  },
+  {
+    "q_num": 79,
+    "matched": null,
+    "stdout": "Ma so: 001 Ten: Nguyen Van A Tuoi:20",
+    "opts": [
+      "Ma so: 001 Ten: Nguyen Van A Tuoi: 20",
+      "Ma so: 20 Ten: Nguyen Van A Tuoi: 001",
+      "Ma so: 001 Ten: Nguyen Van A Tuoi: 001",
+      "Ma so: 20 Ten: Nguyen Van A Tuoi: 20"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? \nclass Employee {\n       char ten[30];\n       char ms[10];\n       int tuoi;\npublic:\n       Employee(const char te[], const char m[], int tu) :tuoi(tu)\n       {\n             strcpy_s(ten, te);\n             strcpy_s(ms, m);\n       }\n       void display() {\n             cout << \"Ma so: \" << ms << \" Ten: \" << ten << \" Tuoi:\" << tuoi << endl;\n       }\n};\nvoid main() {\n       Employee e(\"Nguyen Van A\", \"001\", 20);\n       e.display();\n}"
+  },
+  {
+    "q_num": 80,
+    "matched": 0,
+    "stdout": "24-30",
+    "opts": [
+      "24-30",
+      "30-30",
+      "30-24",
+      "24-24"
+    ],
+    "text": "Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? \nclass Box {\npublic:\n       double length;\n       double breadth;\n       double height;\n};\nint main() {\n       Box Box1;\n       Box Box2;\n       double volume = 0.0;\n \n       Box1.height = 2.0;\n       Box1.length = 3.0;\n       Box1.breadth = 4.0;\n \n       Box2.height = 3.0;\n       Box2.length = 5.0;\n       Box2.breadth = 2.0;\n \n       volume = Box1.height * Box1.length * Box1.breadth;\n       cout << volume << \"-\";\n       volume = Box2.height * Box2.length * Box2.breadth;\n       cout << volume;\n       return 0;\n}"
+  }
+]

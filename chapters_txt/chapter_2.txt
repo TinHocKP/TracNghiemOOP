@@ -1,0 +1,1995 @@
+=== Chương 2: Lớp và Đối tượng (C++) ===
+Tổng số câu: 80
+
+--- CÂU 1 (ID: 1898489164) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, phương thức Rectangle(int w = 0, int h = 0){} được gọi là?
+class Rectangle {
+private:
+       int w;
+       int h;
+public:
+       Rectangle(int w = 0, int h = 0) {}
+       void output() {}
+       ~Rectangle() {}
+};
+
+  A. Phương thức khởi tạo (Constructor)
+  B. Phương thức huỷ (Destructor)
+  C. Phương thức bạn (Friend)
+  D. Phương thức ảo (Virtual)
+
+--- CÂU 2 (ID: 1774496488) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, phương thức ~Rectangle(){} được gọi là?
+class Rectangle {
+private:
+       int w;
+       int h;
+public:
+       Rectangle(int w = 0, int h = 0) {}
+       void output() {}
+       ~Rectangle() {}
+};
+
+  A. Phương thức khởi tạo (Constructor)
+  B. Phương thức hủy (Destructor)
+  C. Phương thức bạn (Friend)
+  D. Phương thức ảo (Virtual)
+
+--- CÂU 3 (ID: 171350838) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Geeks {
+public:
+       string geekname;
+       void printName() {
+             cout << "Geekname is:" << geekname;;
+       }
+};
+int main() {
+       Geeks obj; => Tìm constructor
+       obj.geekname = "Abhi";
+       return 0;
+}
+
+  A. Geekname is:
+  B. Abhi
+  C. Geekname is:Abhi
+  D. Cả 3 đáp án đều sai
+
+--- CÂU 4 (ID: 188739733) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Geeks {
+public:
+       string geekname;
+       void printName() {
+             cout << "Geekname is:" << geekname;
+       }
+};
+int main() {
+       Geeks* obj = NULL;
+       obj->geekname = "Abhi";
+       obj->printName();
+       return 0;
+}
+
+  A. Geekname is:
+  B. Abhi
+  C. Geekname is:Abhi
+  D. Lỗi thực thi
+
+--- CÂU 5 (ID: 871513397) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Geeks {
+public:
+       string geekname;
+       int id;
+       void printName();
+       void printId() {
+             cout << "Geek id is: " << id;
+       }
+};
+void Geeks::printName() {
+       cout << "Geek name is: " << geekname;
+}
+int main() {
+       Geeks obj;
+       obj.geekname = "HITC";
+       obj.id = 15;
+       obj.printName();
+       cout << ",";
+       obj.printId();
+       return 0;
+}
+
+  A. Geek name is: HITC,Geek id is: 15
+  B. Geek id is: 15
+  C. Geek id is: 15, Geek name is: HITC
+  D. HITC,Geek id is: 15
+
+--- CÂU 6 (ID: 2077860334) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Geeks {
+public:
+       int id;
+       Geeks() {
+             id = -1;
+       }
+       Geeks(int x) {
+             id = x;
+       }
+};
+int main() {
+       Geeks obj1;
+       cout << "Geek id is: " << obj1.id;
+       cout << ",";
+       Geeks obj2(21);
+       cout << "Geek id is: " << obj2.id;
+       return 0;
+}
+
+  A. Geek id is: -1
+  B. Geek id is: 21
+  C. Geek id is: -1,Geek id is: 21
+  D. Lỗi biên dịch
+
+--- CÂU 7 (ID: 895684150) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Geeks
+{
+public:
+       int id;
+       ~Geeks() {
+             cout << id << " ";
+       }
+};
+int main() {
+       for (int i = 0; i < 3; i++) {
+             Geeks obj;
+             obj.id = i;
+       }
+       return 0;
+}
+
+  A. A.0
+  B. B.1
+  C. C.2
+  D. D.0 1 2
+
+--- CÂU 8 (ID: 1425163469) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+
+  A. 10
+  B. 200
+  C. 300 300
+  D. Lỗi thực thi
+
+--- CÂU 9 (ID: 666232358) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Demo {
+public:
+       int a, b;
+       Demo() {
+             cout << "Default Constructor" << endl;
+       }
+       Demo(int a, int b) :a(a), b(b) {
+             cout << "Parameterized Constructor: " << a << " " << b << endl;
+       }
+};
+int main() {
+       Demo d(100, 200);
+       return 0;
+}
+
+  A. Default Constructor
+  B. Parameterized Constructor:
+  C. Parameterized Constructor: 100 200
+  D. 100 200
+
+--- CÂU 10 (ID: 17766736) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Demo {
+public:
+       int a = 0;
+       int b = 0;
+       Demo(int a) {
+             cout << a << " ";
+       }
+       Demo(int a, int b) :Demo(a) {
+             cout << a << " " << b << endl;
+       }
+};
+int main() {
+       Demo d(100, 200);
+       return 0;
+}
+
+  A. 100
+  B. 200
+  C. 100 200
+  D. 100 100 200
+
+--- CÂU 11 (ID: 881044231) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Circle {
+public:
+       double radius;
+       double compute_area() {
+             return 3.14 * radius * radius;
+       }
+};
+int main() {
+       Circle obj;
+       obj.radius = 5.5;
+       cout << "Radius: " << obj.radius << " Area: " << obj.compute_area();
+       return 0;
+}
+
+  A. Radius: 94.985
+  B. Radius is: 5.5
+  C. Area is: 94.95
+  D. Radius: 5.5 Area: 94.985
+
+--- CÂU 12 (ID: 93941494) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Circle {
+private:
+       double radius;
+public:
+       double  compute_area() {
+             return 3.14 * radius * radius;
+       }
+};
+int main() {
+       Circle obj;
+       obj.radius = 1.5;
+       cout << "Area is:" << obj.compute_area();
+       return 0;
+}
+
+  A. Radius: 94.985
+  B. Radius is: 5.5
+  C. Area is: 94.95
+  D. Lỗi biên dịch
+
+--- CÂU 13 (ID: 841616138) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Circle {
+private:
+       double radius;
+public:
+       void compute_area(double r) {
+             radius = r;
+             double area = 3.14 * radius * radius;
+             cout << "Radius:" << radius << " Area:" << area;
+       }
+};
+int main() {
+       Circle obj;
+       obj.compute_area(1.5);
+       return 0;
+}
+
+  A. Radius:1.5
+  B. Area:7.065
+  C. Radius:1.5 Area:7.065
+  D. Lỗi biên dịch
+
+--- CÂU 14 (ID: 475727313) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, Lựa chọn nào được viết ở dòng //you code here, để gán giá trị 10 vào biến a
+class RectangleA
+{
+       int a = 6;
+public:
+       void display() {
+             cout << a;
+       }
+};
+int main() {
+       RectangleA rectA;
+       //you code here
+       return 0;
+}
+
+  A. rectA.a  = 10;
+  B. RectangleA::a = 10;
+  C. rectA(a  = 10;
+  D. Không có đáp án đúng
+
+--- CÂU 15 (ID: 340808099) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Rectangle {
+private:
+       int a;
+       int b;
+public:
+       Rectangle() {
+             cout << "Hi";
+       }
+       Rectangle(int m, int n) {
+             cout << "Hello";
+       }
+};
+int main() {
+       Rectangle rect(3, 4);
+       return 0;
+}
+
+  A. Hi
+  B. Hello
+  C. HiHello
+  D. Lỗi biên dịch
+
+--- CÂU 16 (ID: 542505172) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, Hãy cho biết chương trình sau có lỗi ở dòng nào:
+1   class RectangleInt
+2   {
+3   private:
+4       int a = 7;
+5       int b = 9;
+6       
+7   };
+8   class RectangleFloat
+9   {   
+10  private:
+11      float x = 6; 
+12      float y = 8;
+13      friend void output();
+14  };
+15  void output()
+16  {
+17      RectangleInt obj1;
+18      RectangleFloat obj2;
+19      cout << obj1.a; 
+20      cout << obj2.x;
+21  }
+22  int main() {
+23      output();
+24      return 0;
+25  }
+
+  A. Lỗi tại dòng 17, 18
+  B. Lỗi tại dòng 15
+  C. Lỗi tại dòng 19
+  D. Không lỗi ở dòng nào
+
+--- CÂU 17 (ID: 908939189) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Rectangle {
+private:
+       int a;
+       int b;
+public:
+       Rectangle() {
+              cout << "Hi";
+       }
+       Rectangle(int m, int n) {
+             cout << "Hello";
+       }
+};
+int main() {
+       Rectangle rect;
+       return 0;
+}
+
+  A. Hi
+  B. Hello
+  C. HiHello
+  D. Lỗi biên dịch
+
+--- CÂU 18 (ID: 357181805) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Rectangle {
+private:
+       int a;
+       int b;
+public:
+       Rectangle() {
+             cout << "Hi";
+       }
+       Rectangle(int m, int n) {
+             cout << "Hello";
+       }
+};
+int main() {
+       Rectangle* rect = new Rectangle();
+       return 0;
+}
+
+  A. Hi
+  B. Hello
+  C. HiHello
+  D. Lỗi biên dịch
+
+--- CÂU 19 (ID: 1745223760) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Rectangle {
+private:
+       int a;
+       int b;
+public:
+       Rectangle() {
+             cout << "Hi";
+       }
+       Rectangle(int m, int n) {
+             cout << "Hello";
+       }
+};
+int main() {
+       Rectangle* rect = new Rectangle(3, 4);
+       return 0;
+}
+
+  A. Hi
+  B. Hello
+  C. HiHello
+  D. Lỗi biên dịch
+
+--- CÂU 20 (ID: 1223998471) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Rectangle {
+private:
+       int a;
+       int b;
+public:
+       Rectangle() {
+             cout << "Hi";
+       }
+       Rectangle(int m, int n) {
+             cout << "Hello";
+       }
+};
+int main() {
+       Rectangle* rect = new Rectangle(3, 4);
+       return 0;
+}
+
+  A. Hi
+  B. Hello
+  C. HiHello
+  D. Lỗi biên dịch
+
+--- CÂU 21 (ID: 1977381524) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Rectangle {
+private:
+    int a;
+    int b;
+public:
+    Rectangle() {
+        cout << "Hi";
+    }
+    Rectangle(int m, int n):Rectangle {
+        cout << "Hello";
+    }
+};
+int main() {
+    Rectangle *rect= new Rectangle(3);
+    return 0;
+}
+
+  A. Hi
+  B. Hello
+  C. HiHello
+  D. Lỗi biên dịch
+
+--- CÂU 22 (ID: 1097202447) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch chương trình, lỗi tại dòng nào?
+class A{
+private:
+    int x;
+public:
+    int y;
+};
+void main()
+{
+    A obj;
+    obj.x = 10;
+    obj.y = 8;
+}
+
+  A. Lỗi tại dòng int x;
+  B. Lỗi tại dòng obj.y=8;
+  C. Lỗi tại dòng A.obj;
+  D. Lỗi tại dòng obj.x=10;
+
+--- CÂU 23 (ID: 201068373) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch chương trình, lỗi tại obj.x=10, nguyên nhân của lỗi này là?
+class A{
+private:
+    int x;
+public:
+    int y;
+};
+void main(){
+    A obj;
+    obj.x = 10;
+    obj.y = 8;
+}
+
+  A. Chưa khai báo x
+  B. Không thể truy cập vào thành phần private của lớp
+  C. Không xác định được giá trị x
+  D. Phải gọi thông qua tên lớp không được gọi thông qua tên đối tượng
+
+--- CÂU 24 (ID: 1797038945) ---
+Cho chương trình viết bằng ngôn ngữ Java như sau, phương thức Rectangle(){} được gọi là?
+public class Rectangle
+{
+    private int w;
+    private int h;
+    public Rectangle(){}
+    public Rectangle(int w, int h){}
+    void output(){} 
+}
+
+  A. Phương thức khởi tạo (Constructor)
+  B. Phương thức huỷ (Destructor)
+  C. Phương thức bạn (Friend)
+  D. Phương thức ảo (Virtual)
+
+--- CÂU 25 (ID: 2116867802) ---
+class Point
+{
+    int x, y;
+public:
+    Point(int i = 0, int j = 0)
+    {
+        x = i;
+        y = j;
+    }
+    int getX() { return x; }
+    int getY() { return y; }
+};
+int main()
+{
+    Point p1;
+    Point p2 = p1;
+    cout << "x = " << p2.getX() << " y = " << p2.getY();
+    return 0;
+}
+
+  A. x = 0
+  B. y = 0
+  C. x = 0 y = 0
+  D. y = 0 x = 0
+
+--- CÂU 26 (ID: 505469301) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Point {
+    int x, y;
+public:
+    Point(int i = 0, int j = 0) {
+        x = i;
+        y = j;
+    }
+    int getX() { return x; }
+    int getY() { return y; }
+};
+int main(){
+    Point p1(6,8);
+    Point p2 = p1;
+    cout << "x = " << p2.getX() << " y = " << p2.getY();
+    return 0;
+}
+
+  A. x = 0
+  B. y = 0
+  C. x = 0 y = 0
+  D. x = 6 y = 8
+
+--- CÂU 27 (ID: 284940802) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+int i;
+class A {
+    int i = 5;
+public:
+    ~A() { 
+        i = 10; 
+    }
+};
+int foo(){
+    i = 3;
+    A ob;
+    return i;
+}
+int main(){
+    cout << foo() << endl;
+    return 0;
+}
+
+  A. 3
+  B. 5
+  C. 3 5
+  D. 5 3
+
+--- CÂU 28 (ID: 233706384) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch chương trình, lỗi ở dòng nào?
+class POINT {
+    int x, y;
+public:
+    void input();
+};
+class HCN {
+    POINT p; //Dòng 1
+    int d, r;
+public:
+    void input() {
+        cout <<"d, r ="; cin >> d, r;//Dòng 2
+        cout <<"x, y ="; cin >> p.x, p.y;//Dòng 3
+    }
+};
+
+  A. .Dòng 1
+  B. .Dòng 2
+  C. .Dòng 3
+  D. .Lỗi ở cả 3 dòng
+
+--- CÂU 29 (ID: 259051702) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Game {
+private:
+    int n = 0;
+    Game(int x){
+        n = x;
+    }
+public:
+    void print() { 
+        cout << n; 
+    }
+};
+void main() {
+    Game pt(4);
+    pt.print();
+}
+
+  A. .4
+  B. 0
+  C. Lỗi biên dịc
+  D. .Lỗi thực thi
+
+--- CÂU 30 (ID: 1228244168) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Sum{
+private:
+    int  a, b;
+public:
+    Sum (){ 
+        cout << "Contructor 1";
+    }
+    Sum (int m, int n){
+        cout << "Contructor 2";
+    }
+};
+void main(){
+    Sum (3,6);
+}
+
+  A. Tùy chọn 1
+  B. Contructor
+  C. Lỗi biên dịc
+  D. Lỗi thực thi
+
+--- CÂU 31 (ID: 303245163) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Sum{
+private:
+    int  a, b;
+public:
+    Sum(){  
+        cout << "Contructor 1";
+    }
+    Sum(int m, int n){
+        cout << "Contructor 2";
+    }
+};
+void main(){
+    Sum *t = new Sum(3,6);
+}
+
+  A. Contructor 1
+  B. Contructor 2
+  C. Lỗi biên dịch
+  D. Lỗi thực thi
+
+--- CÂU 32 (ID: 1048735390) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class  Sum{
+private:
+    int  a, b;
+public:
+    Sum(){  
+        cout << "Contructor 1";
+    }
+    Sum(int m, int n){
+        cout << "Contructor 2";
+    }
+};
+void main(){
+    Sum *t = new Sum();
+}
+
+  A. Contructor 1
+  B. Contructor 2
+  C. Lỗi biên dịch
+  D. Lỗi thực thi
+
+--- CÂU 33 (ID: 1262647407) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class  Sum {
+private:
+    int  a, b;
+public:
+    Sum() {
+        cout << " Contructor 1 ";
+    }
+    Sum(int m, int n) {
+        Sum();
+        cout << " Contructor 2 ";
+    }
+};
+void main() {
+    Sum* t = new Sum( 3,6);
+}
+
+  A. Contructor 1
+  B. Contructor 2
+  C. Contructor 1 Contructor 2
+  D. Contructor 2 Contructor 1
+
+--- CÂU 34 (ID: 537570986) ---
+Cho chương trình viết bằng ngôn ngữ C++, Định nghĩa hàm constructor nào là đúng?
+
+  A. Một hàm dùng để hủy đối tượng.
+  B. Một hàm dùng để sao chép đối tượng.
+  C. Một hàm dùng để khởi tạo đối tượng.
+  D. Một hàm dùng để so sánh hai đối tượng.
+
+--- CÂU 35 (ID: 1688418828) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class MyClass {
+private:
+    int n;
+public:
+    MyClass() 
+    {
+         n = 16; 
+    }
+    void hienThi() 
+    { 
+        cout << n; 
+    }
+};
+void main() {
+    MyClass t;
+    t.hienThi();
+}
+
+  A. Chương trình thực thi xuất ra màn hình: 16
+  B. Lỗi thực thi
+  C. Lỗi biên dịch
+  D. Chương trình thực thi mà không xuất gì ra màn hình
+
+--- CÂU 36 (ID: 1237679498) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class MyClass {
+    int n;
+public:
+    MyClass(int x) 
+    { 
+        n = x; 
+    }
+    void Print() 
+    { 
+        cout << n; 
+    }
+};
+void main() {
+    MyClass t(5);
+    t.n = 14;
+    t.Print();
+}
+
+  A. Lỗi biên dịch
+  B. Chương trình thực thi xuất ra màn hình: 5
+  C. Chương trình thực thi mà không xuất gì ra màn hình
+  D. Chương trình thực thi xuất ra màn hình: 16
+
+--- CÂU 37 (ID: 133824219) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class AAA {
+    int na;
+public :
+        AAA(int a=0) {
+            na = a ;
+        }
+        ~AAA() {cout<< " "<<na ;}
+};
+void Func(const AAA &aaa) {
+    AAA *a1 = new AAA(3);
+    delete a1;
+}
+void main() {
+    AAA aaa(4); 
+    Func(aaa);
+}
+
+  A. Xuất ra màn hình : 3
+  B. Xuất ra màn hình : 3 3 4
+  C. Xuất ra màn hình : 3 4
+  D. Xuất ra màn hình : 3 4 4
+
+--- CÂU 38 (ID: 1777165689) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Lop1
+{
+private:
+    int a,b;
+public:
+    float x,y;
+    friend class Lop2;
+    friend class Lop3;
+};
+class Lop2
+{
+    Lop1 objA;
+};
+ 
+class Lop3
+{
+    Lop1 objB;
+};
+
+  A. objA và objB truy cập được tất cả các biến
+  B. objA truy cập được tất cả các biến. objB truy cập được các biến x,y
+  C. objA và objB chỉ truy cập được các biến a,b
+  D. objA và objB chỉ truy cập được các biến x,y
+
+--- CÂU 39 (ID: 1368959027) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class MyClass{
+public:
+    MyClass(int i = 0, int j = 0, float k = 0);
+};
+
+  A. MyClass *me = new MyClass();
+  B. MyClass *me = new MyClass(1, 20);
+  C. MyClass *me = new MyClass(1, 20, 30);
+  D. Tất cả đều đúng
+
+--- CÂU 40 (ID: 2038472326) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Base{
+public:
+    Base(){}
+    ~Base()
+    { cout << "Base class "; }
+};
+class Derive :Base
+{
+public:
+    Derive(){}
+    ~Derive()
+    { cout << "Derive class "; }
+};
+int main(){
+    Derive d;
+    return 0;
+}
+
+  A. Derive class Base class
+  B. Derive class
+  C. Base class Derive class
+  D. Base class
+
+--- CÂU 41 (ID: 1943475353) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Circle {
+private:
+    double radius;
+    string color;
+public:
+    Circle(double r = 1.0, string c = "red") {
+        radius = r;
+        color = c;
+    }
+    double getRadius() {
+        return radius;
+    }
+    string getColor() {
+        return color;
+    }
+    double getArea() {
+        return radius * radius * 3.1416;
+    }
+};
+int main() {
+    Circle c1(1.2, "blue");
+    cout << "Radius=" << c1.getRadius() << " Area=" << c1.getArea()
+        << " Color=" << c1.getColor() << endl;
+    return 0;
+}
+
+  A. Radius=1.2 Area=4.5239 Color=blue
+  B. Radius=3.4 Area=36.3169 Color=red
+  C. Radius=1 Area=3.1416 Color=red
+  D. Cả 3 câu đều sai
+
+--- CÂU 42 (ID: 79825092) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Circle {
+private:
+    double radius;
+    string color;
+public:
+    Circle(double r = 1.0, string c = "red");
+    double getRadius();
+    string getColor();
+    double getArea();
+};
+Circle::Circle(double r, string c) {
+    radius = r;
+    color = c;
+}
+double Circle::getRadius() {
+    return radius;
+}
+string Circle::getColor() {
+    return color;
+}
+double Circle::getArea() {
+    return radius*radius*3.1416;
+}
+int main() {
+    Circle c2(3.4);
+    cout << "Radius=" << c2.getRadius() << " Area=" << c2.getArea()
+        << " Color=" << c2.getColor() << endl;
+    return 0;
+}
+
+  A. Radius=1.2 Area=4.5239 Color=blue
+  B. Radius=3.4 Area=36.3169 Color=red
+  C. Radius=1 Area=3.1416 Color=red
+  D. Cả 3 câu đều sai
+
+--- CÂU 43 (ID: 1748572689) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Rectangle {
+    int x, y;
+public:
+    void setValues(int a, int b);
+    int area();
+};
+void Rectangle::setValues(int a, int b) {
+    x = a;
+    y = b;
+}
+int Rectangle::area() {
+    return (x*y);
+}
+int main() {
+    Rectangle *rect = new Rectangle();
+    rect->setValues(5, 20);
+    cout << "area: " << rect->area();
+    delete rect;
+    return 0;
+}
+
+  A. area:20
+  B. area:5
+  C. area:100
+  D. area:25
+
+--- CÂU 44 (ID: 1356149588) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Rectangle {
+    int x, y;
+public:
+    void setValues(int a, int b);
+    int area();
+};
+void Rectangle::setValues(int a, int b) {
+    x = a;
+    y = b;
+}
+int Rectangle::area() {
+    return (x*y);
+}
+int main() {
+    Rectangle *rect = new Rectangle();
+    rect.setValues(5, 20);
+    cout << "area: " << rect.area();
+    delete rect;
+    return 0;
+}
+
+  A. area:20
+  B. area:5
+  C. Lỗi biên dịch tại dòng rect.setValues(5, 20);
+  D. area:25
+
+--- CÂU 45 (ID: 1048910451) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Rectangle {
+    int width, height;
+public:
+    Rectangle(int, int);
+    int area();
+};
+int Rectangle::area() {
+    return (width*height);
+}
+int main() {
+    Rectangle recta(3, 4);
+    cout << "area a:" << recta.area();
+    return 0;
+}
+
+  A. area a:12
+  B. area a:3
+  C. Lỗi biên dịch do lớp Rectangle chưa cài đặt Constructor hai tham số
+  D. area a:7
+
+--- CÂU 46 (ID: 1879729729) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Rectangle {
+    int width, height;
+public:
+    Rectangle(int, int);
+    int area();
+};
+Rectangle::Rectangle(int a, int b) {
+    width = a;
+    height = b;
+}
+int Rectangle::area() {
+    return (width*height);
+}
+int main() {
+    Rectangle recta(3, 4);
+    Rectangle rectb(5, 6);
+    cout << "area a:" << recta.area() << " area b:" << rectb.area();
+    return 0;
+}
+
+  A. area a:12 area b:30
+  B. area a:30 area b:30
+  C. area a:30 area b:12
+  D. Lỗi biên dịch do lớp Rectangle chưa cài đặt Constructor hai tham số
+
+--- CÂU 47 (ID: 879265432) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau. Đoạn chương trình có tính chất gì?
+class Rectangle {
+    int width, height;
+public:
+    Rectangle();
+    Rectangle(int, int);
+    int area();
+};
+Rectangle::Rectangle() {
+    width = 5;
+    height = 5;
+}
+Rectangle::Rectangle(int a, int b) {
+    width = a;
+    height = b;
+}
+int Rectangle::area() {
+    return (width*height);
+}
+int main() {
+    Rectangle recta(3, 4);
+    Rectangle rectb;
+    cout << "area a:" << recta.area();
+    cout << "area b:" << rectb.area();
+    return 0;
+}
+
+  A. Kế thừa
+  B. Trừu tượng
+  C. Chồng hàm khởi tạo
+  D. Quá tải hàm khởi tạo
+
+--- CÂU 48 (ID: 211452597) ---
+Đối tượng rect sẽ được lưu trữ ở vùng nhớ nào khi chương trình thực thi?
+class Rectangle {
+    int x, y;
+public:
+    void setValues(int a, int b);
+    int area();
+};
+void Rectangle::setValues(int a, int b) {
+    x = a;
+    y = b;
+}
+int Rectangle::area() {
+    return (x*y);
+}
+int main() {
+    Rectangle *rect = new Rectangle();
+    rect->setValues(5, 20);
+    cout << "area: " << rect->area();
+    delete rect;
+    return 0;
+}
+
+  A. Stack
+  B. BSS
+  C. Data
+  D. Heap
+
+--- CÂU 49 (ID: 551813171) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Rectangle {
+    int *width, *height;
+public:
+    Rectangle(int, int);
+    int area();
+};
+Rectangle::Rectangle(int a, int b) {
+    width = new int;
+    height = new int;
+    width = a;
+    height = b;
+}
+int Rectangle::area() {
+    return (width*height);
+}
+int main() {
+    Rectangle recta(3, 4);
+    cout << "area a:" << recta.area();
+    return 0;
+}
+
+  A. area a:12
+  B. area a:3
+  C. area a:4
+  D. Lỗi biên dịch tại hàm area() {  return (width*height); }
+
+--- CÂU 50 (ID: 578182489) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Rectangle {
+    int w, h;
+public:
+    Rectangle(int a, int b);
+    void setValues(int a, int b);
+    int area();
+};
+Rectangle::Rectangle(int a, int b){
+    w = a;
+    h = b;
+}
+void Rectangle::setValues(int a, int b) {
+    w = a;
+    h = b;
+}
+int Rectangle::area() {
+    return (w*h);
+}
+int main() {
+    Rectangle recta(5,20);
+    Rectangle *rectb;
+    rectb = &recta;
+    rectb->setValues(3, 4); 
+    cout << "Area a: " << recta.area() << " Area b: " << rectb->area();
+    return 0;
+}
+
+  A. Area a:12 Area b:100
+  B. Area a:12 Area b:12
+  C. Area a:100 Area b:100
+  D. Area a:100 Area b:12
+
+--- CÂU 51 (ID: 1645676962) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Rectangle {
+    int w, h;
+public:
+    void setValues(int a, int b);
+    int area();
+};
+void Rectangle::setValues(int a, int b) {
+    w = a;
+    h = b;
+}
+int Rectangle::area() {
+    return (w*h);
+}
+int main() {
+    Rectangle recta;
+    Rectangle *rectb = new Rectangle();
+    recta.setValues(5, 20);
+    rectb = &recta;
+    cout << "Area a: " << rectb.area() << "Area b: " << recta.area();
+    return 0;
+}
+
+  A. Area a:20 Area b:100
+  B. Area a:5 Area b:100
+  C. Area a:100 Area b:100
+  D. Lỗi biên dịch tại rectb.area()
+
+--- CÂU 52 (ID: 576992485) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, đối tượng rect trong hàm main sẽ được lưu trữ ở vùng nhớ nào khi chương trình thực thi?
+class Rectangle {
+    int x, y;
+public:
+    void setValues(int a, int b);
+    int area();
+};
+void Rectangle::setValues(int a, int b) {
+    x = a;
+    y = b;
+}
+int Rectangle::area() {
+    return (x*y);
+}
+int main() {
+    Rectangle rect;
+    rect.setValues(5, 20);
+    cout << "area: " << rect.area();    
+    delete rect;
+    return 0;
+}
+
+  A. Stack
+  B. BSS
+  C. Data
+  D. Heap
+
+--- CÂU 53 (ID: 1061587818) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, Hàm setValues trong lớp Rectangle có đặc điểm gì?
+class Rectangle {
+       int width, height;
+public:
+       Rectangle();
+       Rectangle(int, int);
+       int area();
+       void setValues(int w, int h);
+       void setValues();
+};
+Rectangle::Rectangle() {
+       width = 5;
+       height = 5;
+}
+Rectangle::Rectangle(int a, int b) {
+       width = a;
+       height = b;
+}
+void Rectangle::setValues(int w, int h) {
+       width = w;
+       height = h;
+}
+void Rectangle::setValues() {
+       width = 0;
+       height = 0;
+}
+int Rectangle::area() {
+       return (width * height);
+}
+int main() {
+       Rectangle recta(3, 4);
+       Rectangle rectb;
+       cout << "area a:" << recta.area();
+       cout << "area b:" << rectb.area();
+       return 0;
+}
+
+  A. Chồng hàm (override)
+  B. Quá tải hàm (overload)
+  C. Hàm khởi tạo (constructor)
+  D. Hàm hủy (destructor)
+
+--- CÂU 54 (ID: 2072229869) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Array {
+       int* data;
+       int size;
+public:
+       Array(int s) {
+             size = s;
+             data = new int[size];
+       }
+       ~Array() {
+             delete data;
+       }
+       void out() {
+             cout << size;
+       }
+};
+void main() {
+       Array a1(10);
+       a1.out();
+}
+
+  A. 5
+  B. 10
+  C. 0
+  D. Lỗi thực thi tại dòng lệnh delete data;
+
+--- CÂU 55 (ID: 186845226) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Array {
+       int size;
+public:
+       Array(int s) {
+             size = s;
+             cout << "Constructor...";
+       }
+       ~Array() {
+             cout << "Destructor...";
+       }
+};
+void out() {
+       Array a1(10);
+       Array a2 = a1;
+       cout << "Out...";
+}
+void main() {
+       out();
+}
+
+  A. Constructor...Out...Destructor...Destructor...
+  B. Constructor...Out...Destructor...
+  C. Constructor...Out...
+  D. Lỗi biên dịch do lớp Array không có hàm hủy (Destructor)
+
+--- CÂU 56 (ID: 146977351) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+Đoạn lệnh sau sai ở đâu, lý do tại sao, cách sửa lại cho đúng
+class Array {
+       int* data;
+       int size;
+public:
+       Array(int s) {
+             size = s;
+             data = new int[size];
+       }
+       ~Array() {
+             delete data;
+       }
+       void out() {
+             cout << size * 2;
+       }
+};
+void main() {
+       Array a1(10);
+       Array a2 = a1;
+       a2.out();
+}
+
+  A. 10
+  B. 5
+  C. 0
+  D. Lỗi thực thi
+
+--- CÂU 57 (ID: 2066270564) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Array {
+       int size;
+public:
+       Array(int s) {
+             size = s;
+             cout << "Constructor...";
+       }
+       ~Array() {
+             cout << "Destructor...";
+       }
+};
+void out() {
+       Array a1(10);
+       Array a2 = a1;
+       cout << "Out...";
+}
+void main() {
+       out();
+}
+
+  A. Constructor...Out...Destructor...Destructor...
+  B. Constructor...Out...Destructor...
+  C. Constructor...Out...
+  D. Lỗi biên dịch do lớp Array không có hàm hủy (Destructor)
+
+--- CÂU 58 (ID: 1852568289) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch, chương trình trên sẽ bị lỗi biên dịch tại dòng nào?
+1 class A {
+2 private:
+3    int x;
+     int  y;
+4 public:
+5   A(int x1, int y1);
+6   void In();  
+7 };
+8 A::A(int x1, int y1) {
+9   x = x1; 
+    y = y1;
+10 }
+11 void A::In() {
+12  cout << x << y;
+13 }
+14 void main() {
+15  A a1(1);
+16  A a2(20, 10);
+17  a1 = a2;
+18  a1.In();
+19 }
+
+  A. Dòng 9 - do sai lỗi cú pháp
+  B. Dòng 11 - do sai lỗi cú pháp
+  C. Dòng 15 - do không có hàm khởi tạo với tham số tương ứng
+  D. Dòng 17 - do không có toán tử gán = trong định nghĩa lớp
+
+--- CÂU 59 (ID: 573356490) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class A {
+private:
+       int x;
+       int y;
+public:
+       A(int x1, int y1) {
+             x = x1;
+             y = y1;
+       }
+       void In() {
+             cout << x << "..." << y;
+       }
+};
+void main()
+{
+       A a(10, 10);
+       a.x += 10;
+       a.y = a.x;
+       a.In();
+}
+
+  A. 10...10
+  B. 20...10
+  C. 20...20
+  D. Lỗi biên dịch (lỗi do truy cập đến thành phần private của lớp A)
+
+--- CÂU 60 (ID: 1779001858) ---
+Giới hạn truy xuất nào không có trong các lớp của C++
+
+  A. public
+  B. private
+  C. protected
+  D. hidden
+
+--- CÂU 61 (ID: 1510116858) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, Trong lớp Test phương thức nào được gọi là phương thức hủy (Destructor)? 
+class Test {
+public:
+       int n;
+private:
+       void display() {
+             cout << n;
+       }
+public:
+       Test() {
+             n = 5;
+       }
+       ~Test() {
+             n = 0;
+       }
+};
+
+  A. display()
+  B. Test()
+  C. ~Test()
+  D. Không có phương thức hủy (Destructor)
+
+--- CÂU 62 (ID: 444758798) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, Trong lớp Test phương thức nào được gọi là phương thức khởi tạo (Contructor)? 
+class Test {
+public:
+       int n;
+private:
+       void display() {
+             cout << n;
+       }
+public:
+       Test() {
+             n = 5;
+       }
+       ~Test() {
+             n = 0;
+       }
+};
+
+  A. display()
+  B. Test()
+  C. ~Test()
+  D. Không có phương thức khởi tạo (Contructor)
+
+--- CÂU 63 (ID: 2066360187) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Test {
+public:
+       int n;
+private:
+       void Display() {
+             cout << n;
+       }
+public:
+       Test() {
+             n = 5;
+       }
+};
+void main() {
+       Test t;
+       t.Display();
+}
+
+  A. 5
+  B. Chương trình thực thi mà không xuất gì ra màn hình.
+  C. Lỗi biên dịch tại lệnh t.Display do hàm Display có thuộc tính private
+  D. Lỗi thực thi do đối tượng t chưa được cấp phát vùng nhớ
+
+--- CÂU 64 (ID: 347927786) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Point {
+       int xVal, yVal;
+public:
+       Point(int x = 0, int y = 0) {
+             xVal = x;
+             yVal = y;
+       }
+       void Print() {
+             cout << " (" << xVal << "," << yVal << " )";
+       }
+};
+void main() {
+       Point pt(5);
+       pt.Print();
+}
+
+  A. (5,0)
+  B. (5,5)
+  C. (0,5)
+  D. Lỗi do tạo đối tượng không đúng
+
+--- CÂU 65 (ID: 964283771) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Point {
+       int xVal, yVal;
+public:
+       Point(int x = 0, int y = 0) {
+             xVal = x;
+             yVal = y;
+             cout << "So nguyen ";
+       }
+       Point(double x = 0, double y = 0) {
+             xVal = x;
+             yVal = y;
+             cout << "So thuc ";
+       }
+       void Print();
+};
+void Point::Print() {
+       cout << " (" << xVal << "," << yVal << " )";
+}
+int main() {
+       Point pt(5.7);
+       pt.Print();
+       return 0;
+}
+
+  A. (5,0)
+  B. (5,5)
+  C. (0,0)
+  D. Lỗi biên dịch tại pt.Print(); do phương thức Print có thuộc tính public
+
+--- CÂU 66 (ID: 1909706506) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Point {
+       int n;
+public:
+       Point(int x) {
+             n = x;
+       }
+       void Print() {
+             cout << n;
+       }
+};
+void main() {
+       Point pt(4);
+       pt.Print();
+}
+
+  A. 4
+  B. 0
+  C. Lỗi biên dịch tại pt.Print(); do phương thức Print có thuộc tính public
+  D. Không xuất gì ra màn hình.
+
+--- CÂU 67 (ID: 1036257470) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Test {
+    int t;
+public:
+    Test(int t) {
+        Test::t = t;
+    }
+    void Print() {
+        cout << t;
+    }
+};
+void main() {
+    Test test(4);
+    test.Test::Print();
+}
+
+  A. Lỗi biên dịch tại test.Test::Print(); do gọi phương thức Print sai
+  B. 4
+  C. 0
+  D. Không xuất gì ra màn hình.
+
+--- CÂU 68 (ID: 1368269662) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Teacher {
+public:
+    static int n;
+    Teacher (){ 
+        cout<<" "<<n++ ; 
+    }
+};
+int Teacher::n = 0;
+int main() {
+    Teacher t1;
+    Teacher t2;
+    Teacher t3;
+    cout<<" "<<t1.n ;
+    return 0;
+}
+
+  A. 0 1 2 3
+  B. 1 2 3 4
+  C. 1 1 1 1
+  D. 0 1 3 2
+
+--- CÂU 69 (ID: 73796943) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Employee {
+    char name[30];
+    char id[10];
+    int age;
+public:
+    Employee(const char n[], const char i[], int a) : age(a) {
+        strcpy_s(name, n);
+        strcpy_s(id, i);
+    }
+    void Display() {
+        cout << "ID: " << id << " Name: " << name << " Age: " << age << endl;
+    }
+};
+int main() {
+    Employee e("Tom", "001", 20);
+    e.Display();
+    return 0;
+}
+
+  A. ID:001 Name:Tome Age:20
+  B. Lỗi thực thi do đối tượng e chưa được cấp phát vùng nhớ
+  C. Lỗi biên dịch do lớp Employee không có hàm khởi tạo 3 tham số
+  D. Không xuất gì ra màn hình.
+
+--- CÂU 70 (ID: 1669004765) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Rectangle {
+    int *width, *height;
+public:
+    Rectangle(int, int);
+    ~Rectangle();
+    int area();
+};
+Rectangle::Rectangle(int a, int b) {
+    cout << "Constructor Rect...";
+}
+Rectangle:: ~Rectangle(){
+    cout << "Destructor Rect.";
+}
+int Rectangle::area() {
+    return (*width)*(*height);
+}
+int main() {
+    Rectangle recta(3, 4);
+    cout << " Rect a...";
+    return 0;
+}
+
+  A. Constructor Rect...Rect a...Destructor Rect
+  B. Constructor Rect...Rect a...
+  C. Constructor Rect...Destructor Rect.
+  D. Rect a...
+
+--- CÂU 71 (ID: 1405416254) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Rectangle {
+    int *width;
+    int *height;
+public:
+    Rectangle();
+    Rectangle(int, int);
+    ~Rectangle();
+    int area();
+};
+Rectangle::Rectangle() {
+}
+Rectangle::Rectangle(int a, int b) {
+    cout << "Constructor Rect...";
+}
+Rectangle:: ~Rectangle(){
+    cout << "Destructor Rect.";
+}
+int Rectangle::area() {
+    return (*width)*(*height);
+}
+int main() {
+    Rectangle recta;
+    cout << " Rect a...";
+    return 0;
+}
+
+  A. Constructor Rect...Rect a...Destructor Rect.
+  B. Constructor Rect...Rect a...
+  C. Rect a...Destructor Rect.
+  D. Rect a...
+
+--- CÂU 72 (ID: 986854741) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Add
+{
+    int x;
+    int y;
+    int z;
+public:
+    void getdata()
+    {
+        x = 5;
+        y = 6;      
+    }
+    void calculate(void);
+    void display(void);
+};
+void Add::calculate()
+{
+    z = x + y;
+}
+void Add::display()
+{
+    cout << z;
+}
+void main()
+{
+    Add a;
+    a.getdata();
+    a.calculate();
+    a.display();
+}
+
+  A. 5
+  B. 11
+  C. 6
+  D. 56
+  E. 65
+
+--- CÂU 73 (ID: 1076954942) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Time
+{
+    int hours, minutes;
+public:
+    void gettime(int h, int m)
+    {
+        hours = h;
+        minutes = m;
+    }
+    void sum(Time, Time);
+    void display(void);
+};
+void Time::sum(Time t1, Time t2)
+{
+    minutes = t1.minutes + t2.minutes;
+    hours = minutes / 60;
+    minutes = minutes % 60;
+    hours = hours + t1.hours + t2.hours;
+}
+void Time::display()
+{
+    cout << hours << ":" << minutes << endl;
+}
+void main()
+{
+    Time T1, T2, T3;
+    T1.gettime(2, 45);
+    T2.gettime(3, 30);
+    T3.sum(T1, T2);
+    cout << "Time is ";
+    T3.display();
+}
+
+  A. Time is 6:30
+  B. Time is 2:45
+  C. Time is 3:30
+  D. Time is 6:15
+
+--- CÂU 74 (ID: 540060023) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Add
+{
+    int x, y, z;
+public:
+    Add(int, int);
+    void calculate(void);
+    void display(void);
+};
+Add::Add(int a, int b)
+{
+    x = a;
+    y = b;
+}
+void Add::calculate()
+{
+    z = x + y;
+}
+void Add::display()
+{
+    cout << z;
+}
+void main()
+{
+    Add a(5, 6);
+    a.calculate();
+    a.display();
+}
+
+  A. 5
+  B. 6
+  C. 11
+  D. 10
+
+--- CÂU 75 (ID: 1487842377) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Test {
+public: 
+    int n;
+    void Display(){ 
+        cout<<n; 
+    }
+    public: Test(){ 
+        n=5; 
+    }
+};
+void main() {
+    Test t;
+    t.Display();
+}
+
+  A. 5
+  B. Lỗi biên dịch.
+  C. Chương trình th
+  D. 0
+
+--- CÂU 76 (ID: 491211685) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class ABC {
+    int n;
+public: 
+      ABC(int x){
+        n=x; 
+    }
+    void Print(){ 
+        cout<<n; 
+    }
+};
+void main() {
+    ABC t(5);
+    t.Print();
+}
+
+  A. 10
+  B. Lỗi biên dịch.
+  C. Chương trình thực thi mà không xuất gì ra màn hình.
+  D. 5
+
+--- CÂU 77 (ID: 991327372) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class ABC {
+       int n;
+public:
+       ABC(int x) {
+             n = x;
+       }
+       void Print() {
+             cout << n;
+       }
+};
+void main() {
+       ABC t(10);
+       t.Print();
+}
+
+  A. 5
+  B. Lỗi biên dịch.
+  C. Chương trình thực thi mà không xuất gì ra màn hình.
+  D. 10
+
+--- CÂU 78 (ID: 1273975725) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Point {
+       int xVal, yVal;
+public:
+       Point(int x = 0, int y = 0) {
+             xVal = x;
+             yVal = y;
+       }
+       void Print() {
+             cout << "(" << xVal << "," << yVal << ")";
+       }
+};
+void main() {
+       Point pt(5);
+       pt.Print();
+}
+
+  A. (5,0)
+  B. (0,5)
+  C. (5,5)
+  D. (0,0)
+
+--- CÂU 79 (ID: 412512436) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Employee {
+       char ten[30];
+       char ms[10];
+       int tuoi;
+public:
+       Employee(const char te[], const char m[], int tu) :tuoi(tu)
+       {
+             strcpy_s(ten, te);
+             strcpy_s(ms, m);
+       }
+       void display() {
+             cout << "Ma so: " << ms << " Ten: " << ten << " Tuoi:" << tuoi << endl;
+       }
+};
+void main() {
+       Employee e("Nguyen Van A", "001", 20);
+       e.display();
+}
+
+  A. Ma so: 001 Ten: Nguyen Van A Tuoi: 20
+  B. Ma so: 20 Ten: Nguyen Van A Tuoi: 001
+  C. Ma so: 001 Ten: Nguyen Van A Tuoi: 001
+  D. Ma so: 20 Ten: Nguyen Van A Tuoi: 20
+
+--- CÂU 80 (ID: 1181296080) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Box {
+public:
+       double length;
+       double breadth;
+       double height;
+};
+int main() {
+       Box Box1;
+       Box Box2;
+       double volume = 0.0;
+ 
+       Box1.height = 2.0;
+       Box1.length = 3.0;
+       Box1.breadth = 4.0;
+ 
+       Box2.height = 3.0;
+       Box2.length = 5.0;
+       Box2.breadth = 2.0;
+ 
+       volume = Box1.height * Box1.length * Box1.breadth;
+       cout << volume << "-";
+       volume = Box2.height * Box2.length * Box2.breadth;
+       cout << volume;
+       return 0;
+}
+
+  A. 24-30
+  B. 30-30
+  C. 30-24
+  D. 24-24
+

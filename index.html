@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hệ Thống Thi Trắc Nghiệm - TRAC NGHIEM OOP</title>
-  <link rel="icon" type="image/png" href="assets/logo-bk.png">
+  <title>Hệ Thống Thi Trắc Nghiệm OOP 2026 - Trường Cao Đẳng Công Thương TP.HCM</title>
+  <link rel="icon" type="image/png" href="assets/logo-hitc.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <!-- Container toàn bộ ứng dụng -->
-   <P> NGUYEN XUAN NHUT </P>
   <div id="app-container">
     
-    <!-- HEADER TRÊN CÙNG: RẤT GỌN CHỈ CÓ LOGO, THỜI GIAN, ĐẶT CỜ, ÔN 50 CÂU -->
+    <!-- HEADER TRÊN CÙNG: LOGO HITC, THỜI GIAN, ĐẶT CỜ, CHỌN GÓI THI, ÔN 6 CHƯƠNG -->
     <header class="header-container compact-header">
       <div class="header-left">
-        <img src="assets/logo-bk.png" alt="Logo Bách Khoa" class="logo-bk">
+        <img src="assets/logo-hitc.png" alt="Logo Trường Cao Đẳng Công Thương TP.HCM" class="logo-bk">
         <div class="header-school-info">
-          <div class="center-title">OOP</div>
-          <div class="school-title">THAY NHUT</div>
+          <div class="center-title">TRƯỜNG CAO ĐẲNG CÔNG THƯƠNG TP.HCM</div>
+          <div class="school-title">KHOA CÔNG NGHỆ THÔNG TIN (HITC)</div>
+          <div class="school-sub">LẬP TRÌNH HƯỚNG ĐỐI TƯỢNG (OOP 2026)</div>
         </div>
       </div>
 
@@ -32,59 +32,89 @@
           <!-- Render động bằng JS: [Câu X] [🚩 Đặt cờ] -->
         </div>
 
-        <!-- 3. Nút Ôn 50 câu -->
-        <a href="practice.html" class="btn-goto-practice" title="Vào Ôn Thi 50 câu từng chủ đề">📚 Ôn 50 câu</a>
+        <!-- 3. Nút chọn gói thi (30 / 60 / 90 câu) -->
+        <button id="btn-change-package" class="btn-select-package" title="Thay đổi gói đề thi 30, 60, 90 câu">
+          🎯 Đổi gói thi
+        </button>
+
+        <!-- 4. Nút Học thực hành 6 Chương -->
+        <a href="practice.html" class="btn-goto-practice" title="Vào Ôn Tập Thực Hành 6 Chương">
+          📚 Ôn 6 Chương
+        </a>
       </div>
     </header>
 
     <!-- WORKSPACE CHÍNH -->
     <main class="main-workspace">
       
-      <!-- CỘT TRÁI: 30 CÂU HỎI & ĐỒNG HỒ ĐẾM NGƯỢC -->
+      <!-- CỘT TRÁI: DANH SÁCH CÂU HỎI & ĐỒNG HỒ ĐẾM NGƯỢC -->
       <aside class="left-sidebar">
-        <div class="mobile-sidebar-heading">📋 Bảng 30 câu hỏi (Chạm để chọn câu):</div>
-        <!-- Lưới 30 câu hỏi: 5 cột x 6 hàng -->
-        <div id="questions-grid" class="questions-grid">
-          <!-- 30 ô câu hỏi sẽ được sinh động bằng JS -->
+        <div class="mobile-sidebar-heading">📋 Danh sách câu hỏi:</div>
+        
+        <!-- Lưới câu hỏi có cuộn mượt cho 30, 60, 90 câu -->
+        <div class="questions-grid-wrapper">
+          <div id="questions-grid" class="questions-grid">
+            <!-- Ô câu hỏi sinh động bằng JS -->
+          </div>
         </div>
 
-        <!-- Cụm nút nộp bài, đồng hồ đếm ngược và phiên bản -->
+        <!-- Chú thích màu sắc: Đúng (Xanh), Sai (Đỏ), Đã làm (Xanh dương) -->
+        <div class="sidebar-legend exam-sidebar-legend">
+          <span class="legend-item"><span class="dot dot-correct"></span> Đúng</span>
+          <span class="legend-item"><span class="dot dot-wrong"></span> Sai</span>
+          <span class="legend-item"><span class="dot dot-answered"></span> Đã làm</span>
+        </div>
+
+        <!-- Cụm nút nộp bài / hành động sau thi -->
         <div class="left-sidebar-footer">
+          <button id="btn-sidebar-retake" class="btn-sidebar-retake" style="display: none;">🔄 Làm bài thi mới</button>
           <button id="btn-submit-exam" class="btn-submit-exam">Kết thúc và Nộp bài</button>
-          <button id="btn-exit-app" class="btn-exit-app" style="display: none;">Thoát chương trình</button>
-          <div id="timer-text" class="timer-display">00 : 30 : 00</div>
-          <div class="app-version">v 1.8.5</div>
         </div>
       </aside>
 
-      <!-- CỘT PHẢI: KHU VỰC CÂU HỎI VÀ ĐÁP ÁN -->
+      <!-- KHU VỰC THI CHÍNH: PHÂN CHIA 2 CỘT (CÂU HỎI TRÁI - TRẢ LỜI PHẢI) -->
       <section class="right-workspace">
-        <!-- Khung hiển thị câu hỏi (Trên) -->
-        <div id="question-box" class="question-box">
-          <!-- Nội dung câu hỏi -->
+        
+        <div id="exam-split-area" class="exam-workspace-split">
+          <!-- CỘT CÂU HỎI (TRÁI - RỘNG RÃI, TOÀN BỘ CHIỀU CAO) -->
+          <div class="question-column">
+            <div class="question-column-header">
+              <span>NỘI DUNG CÂU HỎI</span>
+              <span id="question-header-num" style="color: #64748b; font-weight: 700;"></span>
+            </div>
+            <div id="question-box" class="question-content-box">
+              <!-- Nội dung câu hỏi và code render động -->
+            </div>
+          </div>
+
+          <!-- CỘT TRẢ LỜI (PHẢI - OPTION CARDS RÕ RÀNG) -->
+          <div class="options-column">
+            <div class="options-header-title">
+              CÁC PHƯƠNG ÁN LỰA CHỌN:
+            </div>
+            <div id="options-box" class="options-list-box">
+              <!-- Các lựa chọn card A, B, C, D render động -->
+            </div>
+            <div id="bottom-nav-bar" class="bottom-nav-bar" style="padding: 10px 18px; border-top: 1.5px solid #e2e8f0; background: #f8fafc;">
+              <!-- Thanh điều hướng câu trước / câu tiếp theo -->
+            </div>
+          </div>
         </div>
 
-        <!-- Thanh phân cách 3 chấm nhỏ -->
-        <div class="section-divider-dots">...</div>
-
-        <!-- Khung hiển thị các đáp án (Dưới) -->
-        <div id="options-box" class="options-box">
-          <!-- 4 lựa chọn A, B, C, D -->
+        <!-- Khung tổng kết bảng điểm sau khi nộp bài -->
+        <div id="summary-view-area" style="display: none; height: 100%; overflow-y: auto;">
+          <!-- Render bảng điểm tổng kết -->
         </div>
 
-        <!-- Thanh điều hướng câu trước / câu tiếp theo -->
-        <div id="bottom-nav-bar" class="bottom-nav-bar">
-          <!-- Render động bằng JS -->
-        </div>
       </section>
 
     </main>
 
   </div>
 
-  <!-- Nạp dữ liệu 300 câu hỏi chính thức từ 6 Google Forms -->
+  <!-- Nạp ngân hàng 360 câu hỏi chính thức từ 6 Google Forms -->
   <script src="js/questions.js"></script>
-  <!-- Nạp mã nguồn logic chính dành cho sinh viên làm bài -->
+  <!-- Nạp mã nguồn logic làm bài thi -->
   <script src="js/app.js"></script>
 </body>
 </html>

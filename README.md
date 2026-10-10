@@ -1,53 +1,78 @@
-# Website Thi Trắc Nghiệm CNTT Căn Bản (Đại Học Bách Khoa)
+# HỆ THỐNG THI VÀ HỌC TRẮC NGHIỆM LẬP TRÌNH HƯỚNG ĐỐI TƯỢNG (OOP 2026)
+### TRƯỜNG CAO ĐẲNG CÔNG THƯƠNG TP.HCM (HITC) - KHOA CÔNG NGHỆ THÔNG TIN
 
-Hệ thống thi trắc nghiệm trực tuyến dành cho kỳ thi Ứng dụng CNTT Căn bản (6 Module chuẩn Bộ TT&TT / TT Kỹ thuật Điện toán Bách Khoa), hoạt động nhẹ, ổn định và hoàn toàn miễn phí trên GitHub Pages cho 150 sinh viên thi đồng thời.
+---
 
-## 🌟 Tính Năng Nổi Bật
+## 🌟 TỔNG QUAN DỰ ÁN
 
-- **Chịu tải 150+ sinh viên đồng thời**: Ứng dụng xây dựng trên kiến trúc web tĩnh thuần (HTML5, CSS3, Vanilla ES6 JavaScript), không dùng máy chủ trung gian, nạp tức thì qua GitHub Pages CDN.
-- **Ngân hàng 300 câu hỏi chính thức**: Tích hợp đầy đủ 300 câu hỏi chuẩn từ 6 Google Forms theo từng chuyên đề:
-  1. *Module 1:* Kiến thức CNTT Cơ bản (IU01) - 50 câu
-  2. *Module 2:* Sử dụng máy tính cơ bản (IU02) - 50 câu
-  3. *Module 3:* Sử dụng Internet cơ bản (IU06) - 50 câu
-  4. *Module 4:* Xử lý văn bản cơ bản Word (IU03) - 50 câu
-  5. *Module 5:* Sử dụng bảng tính cơ bản Excel (IU04) - 50 câu
-  6. *Module 6:* Trình chiếu cơ bản PowerPoint (IU05) - 50 câu
-- **Tạo đề thi tự động & độc lập**: Mỗi sinh viên làm một đề gồm 30 câu được bốc ngẫu nhiên đúng 5 câu từ mỗi module trong 6 module.
-- **Thời gian làm bài 30 phút**: Đồng hồ đếm ngược kỹ thuật số `00:30:00`, tự động cảnh báo và nộp bài khi hết giờ.
-- **Giao diện chuẩn xác Bách Khoa**:
-  - Lưới 30 câu hỏi 5x6 trực quan với tính năng đặt cờ 🚩, đổi kích thước chữ linh hoạt.
-  - Sau khi nộp bài: **Câu đúng hiển thị màu XANH LÁ**, **Câu sai hiển thị màu ĐỎ NHẠT**.
-  - Xem lại chi tiết từng câu: **Hiển thị câu trả lời đúng và giải thích rõ ràng bên dưới** khi sinh viên làm sai.
-- **Chống mất bài khi tải lại trang**: Tự động lưu tiến trình làm bài vào LocalStorage.
+Hệ thống thi và ôn luyện trắc nghiệm trực tuyến dành cho sinh viên Trường Cao Đẳng Công Thương TP.HCM (HITC), phục vụ học tập và thi học phần **Lập trình Hướng đối tượng (OOP)** năm 2026.
+Toàn bộ ngân hàng câu hỏi gồm **360 câu hỏi** trích xuất từ **6 Google Forms chính thức** của giảng viên:
+1. **Chương 1 (10 câu)**: Tổng quan Lập trình Hướng đối tượng (`https://forms.gle/bCyynR8j6AFwSJBb9`)
+2. **Chương 2 (80 câu)**: Lớp và Đối tượng C++ (`https://forms.gle/Cu694ZH6GfSD4JDCA`)
+3. **Chương 3 (80 câu)**: Tính Kế thừa C++ (`https://forms.gle/Z9oeLfaJuC7tE9926`)
+4. **Chương 4 (30 câu)**: Tính Đa hình C++ (`https://forms.gle/4K46XXh6QAz6bo9LA`)
+5. **Chương 5 (80 câu)**: Lập trình OOP C# (`https://forms.gle/1GYWNQSZzPuL4Qzn8`)
+6. **Chương 6 (80 câu)**: Lập trình OOP Java (`https://forms.gle/MppHSxcTfQ7N7iqq6`)
 
-## 📁 Cấu Trúc Thư Mục
+---
 
-```
-WebsiteTracNghiem/
-├── index.html                 # Giao diện thi trắc nghiệm (30 câu / 30 phút đếm ngược)
-├── practice.html              # Giao diện ÔN TẬP TỪNG MODULE (đủ 50 câu / không đếm giờ)
-├── admin.html                 # Trang quản lý câu hỏi RIÊNG BIỆT cho GIẢNG VIÊN (adin / admin123)
-├── css/
-│   └── style.css              # Giao diện chuẩn Bách Khoa (Responsive PC, iPad, Phone)
-├── js/
-│   ├── app.js                 # Bộ máy thi thử, bốc ngẫu nhiên, đếm giờ & chấm điểm
-│   ├── practice.js            # Bộ máy ôn tập 50 câu/module tự do, xem đáp án tức thì
-│   ├── questions.js           # 300 câu hỏi chính thức từ 6 Google Forms
-│   └── google-form-helper.js  # Công cụ quản lý ngân hàng câu hỏi
-├── assets/
-│   ├── logo-bk.png            # Logo Đại học Bách Khoa CCE
-│   └── images/                # 17 hình minh họa bài thi tải về cục bộ
-├── tools/
-│   ├── fetch_google_forms.py  # Script tự động trích xuất Google Form
-│   ├── build_exact_bank.py    # Script lắp ráp ngân hàng đề thi
-│   └── GoogleFormExporter.gs  # Google Apps Script cho Google Forms / Sheets
-└── HUONG_DAN_GITHUB.md        # Hướng dẫn chi tiết cách đưa lên GitHub Pages
-```
+## 🎯 CÁC TÍNH NĂNG NỔI BẬT
 
-## 🚀 Hướng Dẫn Nhanh
+### 1. Phòng Thi Trắc Nghiệm (`index.html`)
+- **Menu lựa chọn 3 phương án thi chuẩn**:
+  - **Gói 30 câu (30 phút)**:
+    - Chương 1: 3 câu
+    - Chương 2: 7 câu
+    - Chương 3: 7 câu
+    - Chương 4: 7 câu
+    - Chương 5 (C#): 3 câu
+    - Chương 6 (Java): 3 câu
+  - **Gói 60 câu (60 phút)**:
+    - Chương 1: 2 câu
+    - Chương 2: 16 câu
+    - Chương 3: 16 câu
+    - Chương 4: 16 câu
+    - Chương 5 (C#): 5 câu
+    - Chương 6 (Java): 5 câu
+  - **Gói 90 câu (90 phút)**:
+    - Chương 1: 3 câu
+    - Chương 2: 25 câu
+    - Chương 3: 26 câu
+    - Chương 4: 26 câu
+    - Chương 5 (C#): 5 câu
+    - Chương 6 (Java): 5 câu
+- **Giao diện chuẩn thi trắc nghiệm**:
+  - Logo chính thức Trường Cao Đẳng Công Thương TP.HCM (HITC).
+  - Lưới ô số câu hỏi trực quan (thích ứng 30, 60, 90 ô kèm cuộn thông minh).
+  - Trạng thái trực quan: Đã làm (xanh đậm), Đang làm (viền đỏ), Đặt cờ (🚩 cờ cam).
+  - Khối hiển thị mã nguồn C++, C#, Java chuyên nghiệp (`Consolas`, giao diện tối dễ đọc).
+  - Đồng hồ đếm ngược có cảnh báo khi còn dưới 5 phút, tự động nộp bài khi hết giờ.
+  - Tính điểm theo thang điểm 10.0, thống kê chi tiết tỷ lệ đúng từng chương.
+  - Chế độ xem lại bài thi (Review) hiển thị đáp án đúng và lời giải chi tiết.
 
-Xem chi tiết từng bước tại tệp [HUONG_DAN_GITHUB.md](HUONG_DAN_GITHUB.md).
-1. Tạo kho lưu trữ trên GitHub.
-2. Tải toàn bộ thư mục này lên GitHub.
-3. Bật **Settings -> Pages -> Branch: main -> Save**.
-4. Chia sẻ đường dẫn cho 150 sinh viên cùng tham gia thi.
+### 2. Học Thực Hành 6 Module (`practice.html`)
+- **Giao diện tổng quan 6 Chương**:
+  - Hiển thị đầy đủ thông tin từng chương, số lượng câu, mô tả trọng tâm.
+  - Liên kết trực tiếp đến Google Form gốc.
+  - Lưu tiến độ học tập (% hoàn thành, số câu đúng/sai) vào `localStorage`.
+- **2 Chế độ ôn luyện linh hoạt**:
+  - **Chế độ từng câu (Interactive)**: Chọn đáp án -> Phản hồi ngay Đúng/Sai + Hiển thị lời giải chi tiết.
+  - **Chế độ danh sách (List Mode)**: Cuộn xem toàn bộ 10, 30 hoặc 80 câu kèm đáp án để ôn tập nhanh.
+- **Bộ lọc câu hỏi**: Lọc theo Chưa làm, Đã làm sai, Đã làm đúng.
+- Nút "Làm lại chương này" để xóa tiến độ và luyện tập lại từ đầu.
+
+### 3. Trang Quản Trị & Tra Cứu (`admin.html`)
+- Tra cứu nhanh toàn bộ 360 câu hỏi theo từ khóa hoặc lọc theo từng chương.
+- Kiểm tra đáp án và lời giải chi tiết.
+
+---
+
+## 🚀 HƯỚNG DẪN CHẠY VÀ SỬ DỤNG
+
+1. **Mở trực tiếp trên trình duyệt**:
+   - Nhấp đúp vào tệp `index.html` để vào phòng thi.
+   - Nhấp đúp vào tệp `practice.html` để vào học thực hành 6 chương.
+   - Hoàn toàn không cần cài đặt Web Server hay phần mềm bổ sung (chạy Offline 100%).
+
+2. **Đưa lên mạng Internet miễn phí**:
+   - Xem hướng dẫn chi tiết tại `HUONG_DAN_GITHUB.md` để triển khai lên GitHub Pages trong 2 phút.

@@ -1,0 +1,882 @@
+[
+  [
+    1,
+    2,
+    "COMPILE_ERROR",
+    [
+      "1",
+      "2",
+      "Lỗi biên dịch",
+      "Lỗi thực thi (vì ép kiểu (Two)one)"
+    ]
+  ],
+  [
+    2,
+    2,
+    "COMPILE_ERROR",
+    [
+      "1",
+      "2",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    3,
+    2,
+    "COMPILE_ERROR",
+    [
+      "Parent",
+      "Child",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    4,
+    2,
+    "COMPILE_ERROR",
+    [
+      "Ok",
+      "No",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    5,
+    null,
+    "COMPILE_ERROR",
+    [
+      "Inter inter = new Four();",
+      "Inter inter = new Inter ();",
+      "Six six = new Three ();",
+      "Three three = new One();"
+    ]
+  ],
+  [
+    6,
+    1,
+    "COMPILE_ERROR",
+    [
+      "Two",
+      "Lỗi biên dịch",
+      "Lỗi thực thi",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    7,
+    null,
+    "COMPILE_ERROR",
+    [
+      "1",
+      "0",
+      "6",
+      "5"
+    ]
+  ],
+  [
+    8,
+    null,
+    "COMPILE_ERROR",
+    [
+      "int constructor",
+      "long constructor int constructor",
+      "long constructor long constructor",
+      "long constructor"
+    ]
+  ],
+  [
+    9,
+    2,
+    "COMPILE_ERROR",
+    [
+      "char constructor",
+      "int constructor",
+      "Lỗi biên dịch",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    10,
+    3,
+    "COMPILE_ERROR",
+    [
+      "1",
+      "0",
+      "2",
+      "Lỗi biên dịch"
+    ]
+  ],
+  [
+    11,
+    3,
+    "COMPILE_ERROR",
+    [
+      "Test Constructor",
+      "I Constructor Test Constructor",
+      "T Constructor I Constructor",
+      "Lỗi biên dịch"
+    ]
+  ],
+  [
+    12,
+    2,
+    "COMPILE_ERROR",
+    [
+      "Hello",
+      "Hi",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    13,
+    null,
+    "COMPILE_ERROR",
+    [
+      "Hello Object with int",
+      "Hello Object",
+      "Hello Object with int Hello Object",
+      "Hello Object Hello Object with int"
+    ]
+  ],
+  [
+    14,
+    null,
+    "COMPILE_ERROR",
+    [
+      "int short",
+      "short",
+      "int",
+      "short int"
+    ]
+  ],
+  [
+    15,
+    null,
+    "COMPILE_ERROR",
+    [
+      "Parent",
+      "Child Parent",
+      "Parent Child",
+      "Child"
+    ]
+  ],
+  [
+    16,
+    null,
+    "COMPILE_ERROR",
+    [
+      "Hello",
+      "Hello Hi",
+      "Hi Hello",
+      "Hi"
+    ]
+  ],
+  [
+    17,
+    2,
+    "COMPILE_ERROR",
+    [
+      "Hello",
+      "Hi",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    18,
+    2,
+    "COMPILE_ERROR",
+    [
+      "Parent",
+      "Child",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    19,
+    3,
+    "COMPILE_ERROR",
+    [
+      "Parent",
+      "Child",
+      "Parent Child",
+      "Lỗi biên dịch"
+    ]
+  ],
+  [
+    20,
+    3,
+    "COMPILE_ERROR",
+    [
+      "Parent",
+      "Child",
+      "Lỗi thực thi",
+      "Lỗi biên dịch"
+    ]
+  ],
+  [
+    21,
+    2,
+    "COMPILE_ERROR",
+    [
+      "int",
+      "short",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    22,
+    2,
+    "COMPILE_ERROR",
+    [
+      "Exception",
+      "Not Exception",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    23,
+    null,
+    "COMPILE_ERROR",
+    [
+      "One,Two,Three,",
+      "Three,Two,One,",
+      "One,Three,",
+      "One,"
+    ]
+  ],
+  [
+    24,
+    null,
+    "COMPILE_ERROR",
+    [
+      "void public someMethod(int i)",
+      "public void someMethod(int anotherint)",
+      "public void someMethod(String str)",
+      "public void someMethod(double anotherint)"
+    ]
+  ],
+  [
+    25,
+    null,
+    "COMPILE_ERROR",
+    [
+      "One,Two,Three,",
+      "Three,Two,One,",
+      "Three,",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    26,
+    2,
+    "COMPILE_ERROR",
+    [
+      "69",
+      "68",
+      "Lỗi biên dịch",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    27,
+    2,
+    "COMPILE_ERROR",
+    [
+      "Nothing",
+      "Something",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    28,
+    2,
+    "COMPILE_ERROR",
+    [
+      "Name is Test",
+      "Name is TestObject",
+      "Lỗi biên dịch",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    29,
+    0,
+    "Name is Test",
+    [
+      "Name is Test",
+      "Name is TestObject",
+      "Lỗi biên dịch",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    30,
+    1,
+    "COMPILE_ERROR",
+    [
+      "Abstract Class",
+      "Lỗi biên dịch",
+      "Lỗi thực thi",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    31,
+    1,
+    "COMPILE_ERROR",
+    [
+      "One",
+      "Lỗi biên dịch",
+      "Lỗi thực thi",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    32,
+    null,
+    "COMPILE_ERROR",
+    [
+      "Hi,",
+      "Alice",
+      "Hello Alice,Hi,",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    33,
+    2,
+    "COMPILE_ERROR",
+    [
+      "Hi,",
+      "Hi,Hello Two,",
+      "Lỗi biên dịch",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    34,
+    null,
+    "COMPILE_ERROR",
+    [
+      "Hi,",
+      "Hi,Hello Two,",
+      "Hello Two,Hi,",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    35,
+    2,
+    "COMPILE_ERROR",
+    [
+      "Cả 3 đáp án đều sai",
+      "Hello",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    36,
+    null,
+    "COMPILE_ERROR",
+    [
+      "Hi One,",
+      "Hi Two,",
+      "Hi One,Hello Two",
+      "Hi One,Hello Two,Hi Two,"
+    ]
+  ],
+  [
+    37,
+    null,
+    "COMPILE_ERROR",
+    [
+      "Parent Child",
+      "Child Parent",
+      "Child",
+      "Parent"
+    ]
+  ],
+  [
+    38,
+    null,
+    "COMPILE_ERROR",
+    [
+      "TestChild1 TestChild2",
+      "TestChild2 TestChild1",
+      "TestChild2",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    39,
+    1,
+    "68",
+    [
+      "0",
+      "68",
+      "Lỗi thực thi",
+      "Lỗi biên dịch"
+    ]
+  ],
+  [
+    40,
+    2,
+    "COMPILE_ERROR",
+    [
+      "Parent Hello",
+      "Child Hello",
+      "Lỗi biên dịch",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    41,
+    2,
+    "00",
+    [
+      "5",
+      "6",
+      "0",
+      "00"
+    ]
+  ],
+  [
+    42,
+    1,
+    "Child Hello",
+    [
+      "Parent Hello",
+      "Child Hello",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    43,
+    0,
+    "COMPILE_ERROR",
+    [
+      "Lỗi biên dịch",
+      "Lỗi thực thi",
+      "Result for int: 0",
+      "Result for int: 1"
+    ]
+  ],
+  [
+    44,
+    2,
+    "COMPILE_ERROR",
+    [
+      "Parent Hello",
+      "Child Hello",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    45,
+    0,
+    "int: 0 double: 1",
+    [
+      "int: 0",
+      "double: 0",
+      "int: 0 double: 0",
+      "int: 0 double: 1"
+    ]
+  ],
+  [
+    46,
+    2,
+    "COMPILE_ERROR",
+    [
+      "1",
+      "0",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    47,
+    1,
+    "COMPILE_ERROR",
+    [
+      "Hi",
+      "Lỗi biên dịch",
+      "Lỗi thực thi",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    48,
+    0,
+    "Hi",
+    [
+      "Hi",
+      "Lỗi biên dịch",
+      "Lỗi thực thi",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    49,
+    0,
+    "int version",
+    [
+      "int version",
+      "long version",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    50,
+    null,
+    "",
+    [
+      "i = 5;",
+      "j = 5;",
+      "k = 5;",
+      "Cả 3 đáp án đều đúng"
+    ]
+  ],
+  [
+    51,
+    3,
+    "COMPILE_ERROR",
+    [
+      "Parent",
+      "Child",
+      "Parent Child",
+      "Lỗi biên dịch"
+    ]
+  ],
+  [
+    52,
+    3,
+    "COMPILE_ERROR",
+    [
+      "Parent",
+      "Child",
+      "Parent Child",
+      "Lỗi biên dịch"
+    ]
+  ],
+  [
+    53,
+    1,
+    "1",
+    [
+      "0",
+      "1",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    54,
+    null,
+    "COMPILE_ERROR",
+    [
+      "One",
+      "Two",
+      "One Two",
+      "One One Two"
+    ]
+  ],
+  [
+    55,
+    0,
+    "TestImplementation",
+    [
+      "TestImplementation",
+      "Hello, world!",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    56,
+    2,
+    "COMPILE_ERROR",
+    [
+      "Test class.",
+      "Hello, world!",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    57,
+    2,
+    "COMPILE_ERROR",
+    [
+      "Two",
+      "One",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    58,
+    1,
+    "COMPILE_ERROR",
+    [
+      "Test class.",
+      "Lỗi biên dịch",
+      "Lỗi thực thi",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    59,
+    2,
+    "COMPILE_ERROR",
+    [
+      "1",
+      "10",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    60,
+    3,
+    "COMPILE_ERROR",
+    [
+      "true",
+      "false",
+      "Cả 3 đáp án đều sai",
+      "Lỗi biên dịch"
+    ]
+  ],
+  [
+    61,
+    2,
+    "COMPILE_ERROR",
+    [
+      "true",
+      "false",
+      "Lỗi biên dịch",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    62,
+    null,
+    "COMPILE_ERROR",
+    [
+      "ThreeTwoOne",
+      "ThreeOneTwo",
+      "OneTwoThree",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    63,
+    2,
+    "COMPILE_ERROR",
+    [
+      "Hi",
+      "Hello",
+      "Lỗi biên dịch",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    64,
+    2,
+    "COMPILE_ERROR",
+    [
+      "One",
+      "Two",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    65,
+    3,
+    "COMPILE_ERROR",
+    [
+      "OneTwoStrOneStr",
+      "TwoStrOneStr",
+      "OneTwoStr",
+      "Lỗi biên dịch"
+    ]
+  ],
+  [
+    66,
+    1,
+    "Object",
+    [
+      "String",
+      "Object",
+      "Cả 3 đáp án đều sai",
+      "Lỗi biên dịch"
+    ]
+  ],
+  [
+    67,
+    0,
+    "Integer",
+    [
+      "Integer",
+      "Object",
+      "String",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    68,
+    3,
+    "COMPILE_ERROR",
+    [
+      "Object",
+      "Integer",
+      "Double",
+      "Lỗi biên dịch"
+    ]
+  ],
+  [
+    69,
+    2,
+    "Object",
+    [
+      "Integer",
+      "Double",
+      "Object",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    70,
+    null,
+    "COMPILE_ERROR",
+    [
+      "i",
+      "j",
+      "k",
+      "Cả 3 đáp án đều đúng"
+    ]
+  ],
+  [
+    71,
+    null,
+    "RUNTIME_ERROR",
+    [
+      "y = z = 6;",
+      "y = 8;",
+      "z = 9;",
+      "Cả 3 đáp án đều đúng"
+    ]
+  ],
+  [
+    72,
+    2,
+    "2",
+    [
+      "0",
+      "1",
+      "2",
+      "Lỗi biên dịch"
+    ]
+  ],
+  [
+    73,
+    1,
+    "COMPILE_ERROR",
+    [
+      "0",
+      "Lỗi biên dịch",
+      "Lỗi thực thi",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    74,
+    1,
+    "COMPILE_ERROR",
+    [
+      "0",
+      "Lỗi biên dịch",
+      "Lỗi thực thi",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    75,
+    0,
+    "0",
+    [
+      "0",
+      "Lỗi biên dịch",
+      "Lỗi thực thi",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    76,
+    1,
+    "Hi",
+    [
+      "Hello",
+      "Hi",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    77,
+    1,
+    "COMPILE_ERROR",
+    [
+      "Hello",
+      "Lỗi biên dịch",
+      "Lỗi thực thi",
+      "Cả 3 đáp án đều sai"
+    ]
+  ],
+  [
+    78,
+    3,
+    "COMPILE_ERROR",
+    [
+      "Hello OCAJP",
+      "String",
+      "Array",
+      "Lỗi biên dịch"
+    ]
+  ],
+  [
+    79,
+    2,
+    "COMPILE_ERROR",
+    [
+      "Exception",
+      "Override Exception",
+      "Lỗi biên dịch",
+      "Lỗi thực thi"
+    ]
+  ],
+  [
+    80,
+    null,
+    "COMPILE_ERROR",
+    [
+      "Two int constructor",
+      "One long constructor",
+      "One constructorTwo long constructor",
+      "One constructor"
+    ]
+  ]
+]

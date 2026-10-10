@@ -1,0 +1,152 @@
+[
+  [
+    1,
+    1,
+    "I am ax...I am ax..."
+  ],
+  [
+    2,
+    3,
+    "Person::Person(int)...Faculty::Faculty(int)...Person::Person(int)...Student::Student(int)...TA::TA(int)..."
+  ],
+  [
+    3,
+    1,
+    "Circle Radius 5, Area: 78.5397\tSquare Side 4, Area: 16"
+  ],
+  [
+    4,
+    null,
+    "Rectangle area:20 Triangle area:10"
+  ],
+  [
+    5,
+    1,
+    "B's constructor...A's constructor...C's constructor..."
+  ],
+  [
+    6,
+    1,
+    "Buddy says Woof!\tWhiskers says Meow!"
+  ],
+  [
+    7,
+    2,
+    "81"
+  ],
+  [
+    8,
+    2,
+    "I am By...I am Am...I am Ax..."
+  ],
+  [
+    9,
+    1,
+    "Constructing A...Constructing B...Constructing C...Destructing C...Destructing B...Destructing A..."
+  ],
+  [
+    10,
+    2,
+    "Cube is : 27...Sphere is : 64"
+  ],
+  [
+    11,
+    1,
+    "Circle\tSquare"
+  ],
+  [
+    12,
+    0,
+    "Animal constructor...Tiger constructor ...Animal constructor...Lion constructor...Liger constructor...Animal walks..."
+  ],
+  [
+    13,
+    2,
+    "I am ax...I am ax..."
+  ],
+  [
+    14,
+    0,
+    "Nguyen Ha Hello, Nguyen Anh Tuan!...Nguyen Anh Tuan Hello, Nguyen Ha!..."
+  ],
+  [
+    15,
+    1,
+    "Woof!\tMeow!"
+  ],
+  [
+    16,
+    0,
+    "Constructing base...Constructing derived...Destructing derived...Destructing base..."
+  ],
+  [
+    17,
+    0,
+    "Drawing a circle Drawing a square"
+  ],
+  [
+    18,
+    1,
+    "Name:John, Studying... Working..."
+  ],
+  [
+    19,
+    0,
+    "SecondClass::something()...FirstClass::something()..."
+  ],
+  [
+    20,
+    1,
+    "COMPILE_ERROR"
+  ],
+  [
+    21,
+    0,
+    "11"
+  ],
+  [
+    22,
+    null,
+    "Animal constructor...Tiger constructor ...Lion constructor...Liger constructor...Animal walks..."
+  ],
+  [
+    23,
+    0,
+    "Person::Person(int)...Faculty::Faculty(int)...Student::Student(int)...TA::TA(int)..."
+  ],
+  [
+    24,
+    0,
+    "Rectangle Area: 15\tTriangle Area: 12"
+  ],
+  [
+    25,
+    0,
+    "COMPILE_ERROR"
+  ],
+  [
+    26,
+    1,
+    "B::dummy...A::dummy..."
+  ],
+  [
+    27,
+    0,
+    "COMPILE_ERROR"
+  ],
+  [
+    28,
+    0,
+    "Car Starting.\tMotorcycle Starting."
+  ],
+  [
+    29,
+    0,
+    "AA:something()...BB:something()...BB:something()..."
+  ],
+  [
+    30,
+    0,
+    "I am By...I am Am...I am Bx..."
+  ]
+]

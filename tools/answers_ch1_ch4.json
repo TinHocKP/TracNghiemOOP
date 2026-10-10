@@ -1,0 +1,206 @@
+{
+  "1": [
+    {
+      "index": 0,
+      "answer": 0,
+      "explanation": "Đáp án đúng là lựa chọn: A. Object-oriented programming (Lập trình hướng đối tượng)."
+    },
+    {
+      "index": 1,
+      "answer": 3,
+      "explanation": "Đáp án đúng là lựa chọn: D. 4 đặc trưng cơ bản của OOP gồm Encapsulation (đóng gói), Inheritance (kế thừa), Polymorphism (đa hình), và Abstraction (trừu tượng)."
+    },
+    {
+      "index": 2,
+      "answer": 1,
+      "explanation": "Đáp án đúng là lựa chọn: B. C++ và C# là các ngôn ngữ lập trình hỗ trợ mạnh mẽ mô hình hướng đối tượng."
+    },
+    {
+      "index": 3,
+      "answer": 2,
+      "explanation": "Đáp án đúng là lựa chọn: C. Encapsulation là tính đóng gói trong OOP."
+    },
+    {
+      "index": 4,
+      "answer": 3,
+      "explanation": "Đáp án đúng là lựa chọn: D. Abstraction là tính trừu tượng trong OOP."
+    },
+    {
+      "index": 5,
+      "answer": 3,
+      "explanation": "Đáp án đúng là lựa chọn: D. Inheritance là tính kế thừa trong OOP."
+    },
+    {
+      "index": 6,
+      "answer": 2,
+      "explanation": "Đáp án đúng là lựa chọn: C. Derived Class (Lớp dẫn xuất / lớp con) là lớp kế thừa từ lớp cơ sở."
+    },
+    {
+      "index": 7,
+      "answer": 0,
+      "explanation": "Đáp án đúng là lựa chọn: A. Base Class (Lớp cơ sở / lớp cha) trong quan hệ kế thừa."
+    },
+    {
+      "index": 8,
+      "answer": 2,
+      "explanation": "Đáp án đúng là lựa chọn: C. Pascal nguyên bản là ngôn ngữ lập trình thủ tục/cấu trúc, phát biểu Pascal là ngôn ngữ hướng đối tượng là sai."
+    },
+    {
+      "index": 9,
+      "answer": 2,
+      "explanation": "Đáp án đúng là lựa chọn: C. Polymorphism là tính đa hình trong OOP."
+    }
+  ],
+  "4": [
+    {
+      "index": 0,
+      "answer": 1,
+      "explanation": "Đáp án đúng là lựa chọn: B. I am ax...I am ax...."
+    },
+    {
+      "index": 1,
+      "answer": 3,
+      "explanation": "Đáp án đúng là lựa chọn: D. Person::Person(int)...Faculty::Faculty(int)...Person::Person(int)...Student::Student(int)...."
+    },
+    {
+      "index": 2,
+      "answer": 1,
+      "explanation": "Đáp án đúng là lựa chọn: B. Circle Radius 5, Area: 78.5397."
+    },
+    {
+      "index": 3,
+      "answer": 2,
+      "explanation": "Đáp án đúng là lựa chọn: C. Lớp trừu tượng (abstract classes) vì chứa hàm thuần ảo virtual int area() = 0;"
+    },
+    {
+      "index": 4,
+      "answer": 1,
+      "explanation": "Đáp án đúng là lựa chọn: B. B's constructor...A's constructor...C's constructor...."
+    },
+    {
+      "index": 5,
+      "answer": 1,
+      "explanation": "Đáp án đúng là lựa chọn: B. Whiskers says Meow!."
+    },
+    {
+      "index": 6,
+      "answer": 2,
+      "explanation": "Đáp án đúng là lựa chọn: C. 8."
+    },
+    {
+      "index": 7,
+      "answer": 2,
+      "explanation": "Đáp án đúng là lựa chọn: C. I am By...I am Am...I am Ax...."
+    },
+    {
+      "index": 8,
+      "answer": 1,
+      "explanation": "Đáp án đúng là lựa chọn: B. Constructing C...Destructing C...."
+    },
+    {
+      "index": 9,
+      "answer": 2,
+      "explanation": "Đáp án đúng là lựa chọn: C. Cube is : 27."
+    },
+    {
+      "index": 10,
+      "answer": 1,
+      "explanation": "Đáp án đúng là lựa chọn: B. Circle."
+    },
+    {
+      "index": 11,
+      "answer": 0,
+      "explanation": "Đáp án đúng là lựa chọn: A. Animal constructor...Lion constructor...Liger constructor...Animal walks...."
+    },
+    {
+      "index": 12,
+      "answer": 2,
+      "explanation": "Đáp án đúng là lựa chọn: C. I am ax...I am ax...."
+    },
+    {
+      "index": 13,
+      "answer": 0,
+      "explanation": "Đáp án đúng là lựa chọn: A. Nguyen Anh Tuan Hello, Nguyen Ha!...."
+    },
+    {
+      "index": 14,
+      "answer": 1,
+      "explanation": "Đáp án đúng là lựa chọn: B. Woof!."
+    },
+    {
+      "index": 15,
+      "answer": 0,
+      "explanation": "Đáp án đúng là lựa chọn: A. Constructing derived...Destructing derived."
+    },
+    {
+      "index": 16,
+      "answer": 0,
+      "explanation": "Đáp án đúng là lựa chọn: A. Drawing a square."
+    },
+    {
+      "index": 17,
+      "answer": 1,
+      "explanation": "Đáp án đúng là lựa chọn: B. Name:John, Studying... Working...."
+    },
+    {
+      "index": 18,
+      "answer": 0,
+      "explanation": "Đáp án đúng là lựa chọn: A. SecondClass::something()...FirstClass::something()...."
+    },
+    {
+      "index": 19,
+      "answer": 1,
+      "explanation": "Đáp án đúng là lựa chọn: B. Lỗi biên dịch do khai báo kế thừa sai."
+    },
+    {
+      "index": 20,
+      "answer": 0,
+      "explanation": "Đáp án đúng là lựa chọn: A. 11."
+    },
+    {
+      "index": 21,
+      "answer": 0,
+      "explanation": "Đáp án đúng là lựa chọn: A. Do kế thừa ảo virtual public Animal nên Animal chỉ được khởi tạo 1 lần trước tiên, sau đó đến Tiger, Lion, Liger."
+    },
+    {
+      "index": 22,
+      "answer": 0,
+      "explanation": "Đáp án đúng là lựa chọn: A. Person::Person(int)...Faculty::Faculty(int)...Student::Student(int)...."
+    },
+    {
+      "index": 23,
+      "answer": 0,
+      "explanation": "Đáp án đúng là lựa chọn: A. Triangle Area: 12."
+    },
+    {
+      "index": 24,
+      "answer": 0,
+      "explanation": "Đáp án đúng là lựa chọn: A. Lỗi biên dịch do khai báo lớp mẫu sai."
+    },
+    {
+      "index": 25,
+      "answer": 1,
+      "explanation": "Đáp án đúng là lựa chọn: B. B::dummy."
+    },
+    {
+      "index": 26,
+      "answer": 0,
+      "explanation": "Đáp án đúng là lựa chọn: A. Lỗi biên dịch tại cout << w.getID();."
+    },
+    {
+      "index": 27,
+      "answer": 0,
+      "explanation": "Đáp án đúng là lựa chọn: A. Car Starting.."
+    },
+    {
+      "index": 28,
+      "answer": 0,
+      "explanation": "Đáp án đúng là lựa chọn: A. BB:something()...."
+    },
+    {
+      "index": 29,
+      "answer": 0,
+      "explanation": "Đáp án đúng là lựa chọn: A. I am By...I am Am...I am Bx...."
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat" >nul && cd test_cpp && cl /EHsc /nologo test.cpp > compile.log 2>&1 && test.exe

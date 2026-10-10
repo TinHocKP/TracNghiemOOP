@@ -1,0 +1,83 @@
+=== Chương 1: Tổng quan OOP ===
+Tổng số câu: 10
+
+--- CÂU 1 (ID: 1633608974) ---
+OOP là từ viết tắt của thuật ngữ tiếng Anh gì?
+
+  A. Object-oriented programming
+  B. Object-oriented design
+  C. Object-oriented analysis
+  D. Cả 3 câu trên
+
+--- CÂU 2 (ID: 740747136) ---
+Những phát biểu nào sau đây, thể hiện các đặc điểm cơ bản của lập trình hướng đối tượng?
+
+  A. Tính đóng gói, tính kế thừa, tính đa hình, tính đặc biệt hóa.
+  B. Tính đóng gói, tính trừu tượng.
+  C. Tính chia nhỏ, tính kế thừa.
+  D. Tính đóng gói, tính kế thừa, tính đa hình, tính trừu tượng
+
+--- CÂU 3 (ID: 119839731) ---
+Hãy chọn câu trả lời đúng:
+
+  A. Ngôn ngữ lập trình C, C++, C# là ngôn ngữ lập trình cấu trúc.
+  B. Ngôn ngữ lập trình C#, C++ là ngôn ngữ lập trình hướng đối tượng.
+  C. Ngôn ngữ lập trình Pascal, C là ngôn ngữ lập trình cấu trúc.
+  D. Ngôn ngữ lập trình C++, Java là ngôn ngữ lập trình cấu trúc.
+
+--- CÂU 4 (ID: 2129411775) ---
+Trong lập trình hướng đối tượng, sự đóng gói có thuật ngữ tiếng Anh là gì?
+
+  A. Polymorphism.
+  B. Abstraction.
+  C. Encapsulation.
+  D. Inheritance.
+
+--- CÂU 5 (ID: 2137303446) ---
+Trong lập trình hướng đối tượng, sự trừu tượng có thuật ngữ tiếng Anh là gì?
+
+  A. Encapsulation.
+  B. Polymorphism.
+  C. Inheritance.
+  D. Abstraction.
+
+--- CÂU 6 (ID: 1029296896) ---
+Trong lập trình hướng đối tượng, sự kế thừa có thuật ngữ tiếng Anh là gì?
+
+  A. Abstraction.
+  B. Encapsulation.
+  C. Polymorphism.
+  D. Inheritance.
+
+--- CÂU 7 (ID: 1102069760) ---
+Trong lập trình hướng đối tượng, lớp kế thừa có thuật ngữ tiếng Anh là gì?
+
+  A. Inheritance Class.
+  B. Object Class.
+  C. Derived Class.
+  D. Base Class.
+
+--- CÂU 8 (ID: 1172574499) ---
+Trong lập trình hướng đối tượng, trong kế thừa. Lớp cơ sở (hay còn gọi là lớp cha) có thuật ngữ tiếng Anh là gì?
+
+  A. Base Class.
+  B. Derived Class.
+  C. Object Class.
+  D. Inheritance Class.
+
+--- CÂU 9 (ID: 1319303927) ---
+Hãy chọn câu phát biểu sai:
+
+  A. C++ là ngôn ngữ lập trình cấu trúc.
+  B. Ngôn ngữ C++, Java là ngôn ngữ lập trình hướng đối tượng.
+  C. Ngôn ngữ Pascal là ngôn ngữ lập trình hướng đối tượng.
+  D. C và Pascal là ngôn ngữ chỉ lập trình cấu trúc.
+
+--- CÂU 10 (ID: 1340520811) ---
+Trong lập trình hướng đối tượng, Sự đa hình có thuật ngữ tiếng Anh là gì?
+
+  A. Abstraction.
+  B. Encapsulation.
+  C. Polymorphism
+  D. Inheritance.
+

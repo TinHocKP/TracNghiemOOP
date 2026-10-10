@@ -1,0 +1,1118 @@
+=== Chương 4: Tính Đa hình (C++) ===
+Tổng số câu: 30
+
+--- CÂU 1 (ID: 2037859298) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class A{
+public:
+    void x(){
+        cout << "I am ax...";
+    }
+};
+class B : public A{
+public:
+    void x(){
+        cout << "I am bx...";
+    }
+    void y(){
+        cout << "I am by...";
+    }
+};
+void show(A *a) {
+    a->x();
+}
+void main() {
+    A *a = new A();
+    show(a);
+    B *b = new B();
+    show(b);
+}
+
+  A. I am ax...I am bx...
+  B. I am ax...I am ax...
+  C. I am bx...I am bx...
+  D. I am bx...I am ax...
+
+--- CÂU 2 (ID: 608983014) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Person {
+public:
+    Person(int x)  {
+        cout << "Person::Person(int)..." ;
+    }
+};
+class Faculty : public Person {
+public:
+    Faculty(int x) :Person(x)   {
+        cout << "Faculty::Faculty(int)..." ;
+    }
+};
+class Student : public Person {
+public:
+    Student(int x) :Person(x) {
+        cout << "Student::Student(int)..." ;
+    }
+};
+class TA : public Faculty, public Student  {
+public:
+    TA(int x) :Student(x), Faculty(x)   {
+        cout << "TA::TA(int)..." ;
+    }
+};
+int main()  {
+    TA t(30);
+}
+
+  A. Person::Person(int)...Faculty::Faculty(int)...Student::Student(int)...TA::TA(int )...
+  B. Faculty::Faculty(int)...Person::Person(int)...Student::Student(int)...TA::TA(int )...
+  C. Person::Person(int)...Faculty::Faculty(int)...Person::Person(int)...Student::Student(int)...TA::TA(int )...
+  D. Person::Person(int)...Faculty::Faculty(int)...Person::Person(int)...Student::Student(int)...
+
+--- CÂU 3 (ID: 1935933190) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+#include <cmath>
+class Shape {
+public:
+    virtual float area() = 0;  
+    virtual void printInfo() {
+        cout << "Shape" << endl;
+    }
+};
+class Circle : public Shape {
+public:
+    Circle(float radius) : radius(radius) {}
+    float area() override {
+        return 3.14159 * radius * radius;
+    }
+    void printInfo() override {
+        cout << "Circle Radius " << radius ;
+    }
+private:
+    float radius;
+};
+class Square : public Shape {
+public:
+    Square(float side) : side(side) {}
+    float area() override {
+        return side * side;
+    }
+    void printInfo() override {
+        cout << "Square Side " << side ;
+    }
+private:
+    float side;
+};
+int main() {
+    Circle circle(5);
+    Square square(4);
+    Shape* shapes[] = { &circle, &square };
+    for (int i = 0; i < 2; ++i) {
+        shapes[i]->printInfo();
+        cout << ", Area: " << shapes[i]->area() << "	";
+    }
+    return 0;
+}
+
+  A. Circle Radius 5, Area: 78.5397 Square Side 4, Area: 16
+  B. Circle Radius 5, Area: 78.5397
+  C. Circle Radius 5
+  D. Square Side 4, Area: 16
+
+--- CÂU 4 (ID: 1441262856) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, lớp Polygon có đặc điểm gì?
+class Polygon {
+protected:
+    int width, height;
+public:
+    void setValues(int a, int b);
+    virtual int area()=0;
+};
+void Polygon::setValues(int a, int b){
+    width = a;
+    height = b;
+}
+class Rectangle : public Polygon {
+public:
+    int area();
+};
+int Rectangle::area(){
+    return (width * height);
+}
+class Triangle : public Polygon {
+public:
+    int area();
+};
+int Triangle::area(){
+    return (width * height / 2);
+}
+int main() {
+    Rectangle rect;
+    Triangle trgl;
+    rect.setValues(4, 5);
+    trgl.setValues(4, 5);
+    cout << "Rectangle area:" << rect.area() << " Triangle area:" << trgl.area() << endl;
+    return 0;
+}
+
+  A. Lớp đa kế thừa
+  B. Lớp mẫu (Template Classes)
+  C. Lớp trừu tượng (abstract classes)
+  D. Các đáp án đều sai
+
+--- CÂU 5 (ID: 261270686) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class A{
+public:
+    A()  { 
+        cout << "A's constructor...";
+    }
+};
+class B{
+public:
+    B()  { 
+        cout << "B's constructor..."; 
+    }
+};
+class C : public B, public A {
+public:
+    C()  { 
+        cout << "C's constructor...";
+    }
+};
+int main(){
+    C c;
+    return 0;
+}
+
+  A. A's constructor...B's constructor...
+  B. B's constructor...A's constructor...C's constructor...
+  C. A's constructor...B's constructor...C's constructor...
+  D. B's constructor...
+
+--- CÂU 6 (ID: 259383428) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Animal {
+public:
+    string name;
+    string species;
+    Animal(const string& name, const string& species)
+        : name(name), species(species) {}
+    virtual string makeSound() const = 0;
+};
+class Dog : public Animal {
+public:
+    Dog(const string& name)
+        : Animal(name, "Dog") {}
+    string makeSound() const override {
+        return "Woof!";
+    }
+};
+class Cat : public Animal {
+public:
+    Cat(const string& name)
+        : Animal(name, "Cat") {}
+    string makeSound() const override {
+        return "Meow!";
+    }
+};
+int main() {
+    Dog dogInstance("Buddy");
+    Cat catInstance("Whiskers");
+    cout << dogInstance.name << " says " << dogInstance.makeSound()<<"	";
+    cout << catInstance.name << " says " << catInstance.makeSound();
+    return 0;
+}
+
+  A. Whiskers says Meow! Buddy says Woof!
+  B. Whiskers says Meow!
+  C. Buddy says Woof!
+  D. Buddy says Woof! Whiskers says Meow!
+
+--- CÂU 7 (ID: 390872957) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Polygon {
+protected:
+    int width, height;
+public:
+    Polygon(int a);
+    void  setValues(int a, int b);
+};
+Polygon::Polygon(int a){
+    width = a;
+}
+void Polygon::setValues(int a, int b){
+    width = a;
+    height = b;
+}
+class Rectangle : public Polygon {
+public:
+    Rectangle(int w, int h);
+    int area();
+};
+Rectangle::Rectangle(int w, int h) :Polygon(h){
+    height = h;
+}
+int Rectangle::area(){
+    return (width * height);
+}
+int main() {
+    Rectangle rect(8, 9);
+    cout << rect.area() << endl;
+    return 0;
+}
+
+  A. 72
+  B. 17
+  C. 8
+  D. 81
+
+--- CÂU 8 (ID: 1626091384) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class A{
+public:
+    void x(){
+        cout << "I am Ax...";
+    }
+    void m(){
+        cout << "I am Am...";
+        x();
+    }
+};
+class B : public A{
+public:
+    void x(){
+        cout << "I am Bx...";
+    }
+    void y(){
+        cout << "I am By...";
+        m();
+    }
+};
+void main()
+{
+    B *b = new B();
+    b->y();
+}
+
+  A. I am By...I am Am...I am Bx...
+  B. I am By...I am Bx...
+  C. I am By...I am Am...I am Ax...
+  D. I am By...I am Bm...
+
+--- CÂU 9 (ID: 798343067) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class A {
+public:
+   A() {
+      cout << "Constructing A...";
+   }
+   ~A() {
+      cout << "Destructing A...";
+   }
+};
+class B : public A {
+public:
+   B() {
+      cout << "Constructing B...";
+   }
+   ~B() {
+      cout << "Destructing B...";
+   }
+};
+class C : public B {
+public:
+   C(){
+      cout << "Constructing C...";
+   }
+   ~C(){
+      cout << "Destructing C...";
+   }
+};
+void main(){
+   C ob;
+}
+
+  A. Constructing A...Constructing B...Constructing C.Destructing C...Destructing B...Destructing A...
+  B. Constructing C...Destructing C...
+  C. Constructing A...Constructing B...Constructing C...
+  D. Constructing A...Destructing A...
+
+--- CÂU 10 (ID: 1818534402) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Shape
+{
+protected:
+   double volume;
+public:
+   virtual void find_vol() = 0;
+};
+class Cube : public Shape
+{
+protected:
+   double side;
+public:
+   Cube();
+   void find_vol();
+};
+class Sphere : public Shape
+{
+protected:
+   double radius;
+public:
+   Sphere();
+   void find_vol();
+};
+Cube::Cube()
+{   
+   side=3;
+}
+Sphere::Sphere()
+{
+   radius=4;
+}
+void Cube::find_vol()
+{
+   volume = side*side*side;
+   cout << "Cube is : " << volume << "...";
+}
+void Sphere::find_vol()
+{
+   volume = radius*radius*radius;
+   cout << "Sphere is : "<< volume;
+}
+void main()
+{
+   Shape *ptr;
+   Cube cube;
+   Sphere sphere;
+   ptr = &cube;
+   ptr->find_vol();
+   ptr = &sphere;
+   ptr->find_vol();
+}
+
+  A. Cube is : 3...Sphere is : 4
+  B. Sphere is : 4
+  C. Cube is : 27
+  D. Cube is : 27...Sphere is : 64
+
+--- CÂU 11 (ID: 124355523) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Shape {
+public:
+    virtual void draw() = 0; 
+    virtual ~Shape() {} 
+};
+class Circle : public Shape {
+public:
+    void draw() override {
+        cout << "Circle" ;
+    }
+};
+class Square : public Shape {
+public:
+    void draw() override {
+        cout << "Square" ;
+    }
+};
+int main() {
+    Circle circle;
+    Square square;
+    Shape* shapes[] = { &circle, &square };
+    for (int i = 0; i < 2; ++i) {
+        shapes[i]->draw();
+        cout << "	";
+    }
+    return 0;
+}
+
+  A. Square Circle
+  B. Circle
+  C. Square
+  D. Circle Square
+
+--- CÂU 12 (ID: 1670267495) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Animal{
+public:
+    Animal(){
+        cout << "Animal constructor...";
+    }
+    void walk(){
+        cout << "Animal walks...";
+    }
+};
+class Tiger : public Animal{
+public:
+    Tiger(){
+        cout << "Tiger constructor ...";
+    }
+};
+class Lion : public Animal{
+public:
+    Lion(){
+        cout << "Lion constructor..." ;
+    }
+};
+class Liger : public Tiger, public Lion{
+public:
+    Liger(){
+        cout << "Liger constructor..." ;
+    }
+};
+int main()
+{
+    Liger anil;
+    anil.Animal::walk();
+    return 0;
+}
+
+  A. Animal constructor...Lion constructor...Liger constructor...Animal walks...
+  B. Animal constructor...Tiger constructor...Animal constructor...
+  C. Tiger constructor...Animal constructor...Lion constructor...Liger constructor...
+  D. Animal constructor...Tiger constructor...Animal constructor...Lion constructor...Liger constructor...Animal walks...
+
+--- CÂU 13 (ID: 1143993938) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class A{
+public:
+    void x(){
+        cout << "I am ax...";
+    }
+};
+class B : public A{
+public:
+    void x(){
+        cout << "I am bx...";
+    }
+    void y(){
+        cout << "I am by...";
+    }
+};
+void show(A *a){
+    a->x();
+}
+void main(){
+    A *a = new A();
+    show(a);
+    B *b = new B();
+    show(b);
+}
+
+  A. I am bx...I am ax...
+  B. I am ax...I am bx...
+  C. I am ax...I am ax...
+  D. I am bx...I am bx...
+
+--- CÂU 14 (ID: 1621828514) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Human {
+private:
+   string nameC;
+public:
+   Human(const string & name) : nameC(name) { }
+   string name() const { return nameC; }
+   void talkTo(const Human & person) const {
+      cout << nameC << " Hello, " << person.name() << "!" << "...";
+   }
+};
+int main() {
+   Human ha("Nguyen Ha");
+   Human tuan("Nguyen Anh Tuan");
+   ha.talkTo(tuan);
+   tuan.talkTo(ha);
+   return 0;
+}
+
+  A. Nguyen Anh Tuan Hello, Nguyen Ha!...
+  B. Nguyen Anh Tuan Hello, Nguyen Ha!...Nguyen Ha Hello, Nguyen Anh Tuan!...
+  C. Nguyen Ha Hello, Nguyen Anh Tuan!...Nguyen Anh Tuan Hello, Nguyen Ha!...
+  D. Nguyen Ha Hello, Nguyen Anh Tuan!...
+
+--- CÂU 15 (ID: 229276747) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Animal {
+public:
+    Animal(const string& name, const string& species) : name(name), species(species) {}
+    virtual void makeSound() const = 0;
+    void getInfo() const {
+        cout << name << " is a " << species << endl;
+    }
+protected:
+    string name;
+    string species;
+};
+class Dog : public Animal {
+public:
+    Dog(const string& name) : Animal(name, "Dog") {}
+    void makeSound() const override {
+        cout << "Woof!" << "	";
+    }
+};
+class Cat : public Animal {
+public:
+    Cat(const string& name) : Animal(name, "Cat") {}
+    void makeSound() const override {
+        cout << "Meow!";
+    }
+};
+int main() {
+    Dog dog("Buddy");
+    Cat cat("Whiskers");
+    dog.makeSound();
+    cat.makeSound();
+    return 0;
+}
+
+  A. Buddy Whiskers
+  B. Woof!
+  C. Meow!
+  D. Woof! Meow!
+
+--- CÂU 16 (ID: 1449108955) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Base
+{
+public:
+   Base()
+   {
+      cout << "Constructing base...";
+   }
+   ~Base()
+   {
+      cout << "Destructing base...";
+   }
+};
+class Derived : public Base
+{
+public:
+   Derived()
+   {
+      cout << "Constructing derived...";
+   }
+   ~Derived()
+   {
+      cout << "Destructing derived...";
+   }
+};
+void main()
+{
+   Derived ob;
+}
+
+  A. Constructing derived...Destructing derived
+  B. Destructing derived...Destructing base...
+  C. Constructing base...Constructing derived...Destructing derived...Destructing base..."
+  D. Constructing base...Constructing derived...
+
+--- CÂU 17 (ID: 2069494144) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Shape {
+public:
+    virtual void draw() {
+        cout << "Drawing a shape" << endl;
+    }
+};
+class Circle : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing a circle ";
+    }
+};
+class Square : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing a square ";
+    }
+};
+int main() {
+    Shape* shape1 = new Circle();
+    Shape* shape2 = new Square();
+    shape1->draw();
+    shape2->draw();
+    delete shape1;
+    delete shape2;
+    return 0;
+}
+
+  A. Drawing a square
+  B. Drawing a circle
+  C. Drawing a square Drawing a circle
+  D. Drawing a circle Drawing a square
+
+--- CÂU 18 (ID: 256632820) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Person {
+public:
+    Person(const string& name) : name(name) {}
+    void introduce() {
+        cout << "Name:" << name;
+    }
+protected:
+    string name;
+};
+class Student : virtual public Person {
+public:
+    Student(const string& name, int studentID) : Person(name), studentID(studentID) {}
+    void study() {
+        cout << ", Studying..." ;
+    }
+private:
+    int studentID;
+};
+class Worker : virtual public Person {
+public:
+    Worker(const string& name, const string& job) : Person(name), job(job) {}
+    void work() {
+        cout << " Working..." ;
+    }
+private:
+    string job;
+};
+class WorkingStudent : public Student, public Worker {
+public:
+    WorkingStudent(const string& name, int studentID, const string& job)
+        : Person(name), Student(name, studentID), Worker(name, job) {}
+};
+int main() {
+    WorkingStudent ws("John", 123, "Engineer");
+    ws.introduce(); 
+    ws.study();
+    ws.work();
+    return 0;
+}
+
+  A. Name:John, 123... Engineer...
+  B. Name:John, Studying... Working...
+  C. Name:John
+  D. Name:John, Engineer... 123...
+
+--- CÂU 19 (ID: 948992510) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class FirstClass {
+public:
+    void something() {
+        cout << "FirstClass::something()..."; 
+    }
+};
+class SecondClass : public FirstClass {
+public:
+    void something() { 
+        cout << "SecondClass::something()...";
+    }
+};
+void niceFunction(FirstClass y) {
+    y.something(); 
+}
+int main(int argc, char **argv) {
+    SecondClass x;
+    x.something(); 
+    niceFunction(x); 
+}
+
+  A. SecondClass::something()...FirstClass::something()...
+  B. FirstClass::something()...
+  C. SecondClass::something()...
+  D. FirstClass::something()...SecondClass::something()...
+
+--- CÂU 20 (ID: 2122725036) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Vehicle {
+public:
+    double speed;
+    double mass;
+    double kineticEnergy() {
+        return 0.5 * mass * speed * speed;
+    }
+};
+class Plane : public Vehicle {
+public:
+    double altitude;
+    double totalEnergy() {
+        return kineticEnergy() + mass * altitude;
+    }
+};
+bool nonNullEnergy(Vehicle v) {
+    return v.kineticEnergy() != 0.0;
+}
+int main(int argc, char **argv) {
+    Plane p;
+    p.speed = 150.0; 
+    p.mass = 1500.0; 
+    p.altitude = 1300;
+    if (nonNullEnergy(p)) 
+        cout << "There is some energy.
+";
+    else
+        cout << "There is not energy.
+";
+}
+
+  A. Lỗi thực thi tại p.speed = 150.0; do đối tượn p chưa được cấp phát vùng nhớ
+  B. Lỗi biên dịch do khai báo kế thừa sai
+  C. There is not energy
+  D. There is some energy
+
+--- CÂU 21 (ID: 755546652) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Function {
+public: 
+    virtual double eval(double x) = 0;  
+    double cal(double x, double y) {
+        return (eval(x + y));
+    }
+};
+class Oscillating : public Function {
+    double a, b, c;
+public:
+    Oscillating(double aa, double bb, double cc) : a(aa), b(bb), c(cc) {
+    }
+    double eval(double x) { 
+        return x+a+b+c; 
+    }
+};
+int main(int argc, char *argv) {
+    Oscillating f(1, 2, 3);
+    cout << f.cal(2, 3);
+}
+
+  A. 11
+  B. 5
+  C. 10
+  D. 2
+
+--- CÂU 22 (ID: 442071574) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Animal{
+public:
+    Animal(){
+        cout << "Animal constructor...";
+    }
+    void walk(){
+        cout << "Animal walks...";
+    }
+};
+class Tiger : virtual public Animal{
+public:
+    Tiger(){
+        cout << "Tiger constructor ...";
+    }
+};
+class Lion : virtual public Animal{
+public:
+    Lion(){
+        cout << "Lion constructor..." ;
+    }
+};
+class Liger : public Tiger, public Lion{
+public:
+    Liger(){
+        cout << "Liger constructor..." ;
+    }
+};
+int main()
+{
+    Liger anil;
+    anil.walk();
+    return 0;
+}
+
+  A. Animal constructor...Tiger constructor...Lion constructor...Liger constructor...Animal walks...
+  B. Tiger constructor...Animal constructor...Lion constructor...Liger constructor...
+  C. Animal constructor...Tiger constructor...Animal constructor...
+  D. Animal constructor...Lion constructor...Liger constructor...Animal walks...
+
+--- CÂU 23 (ID: 1092402164) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class Person {
+public:
+   Person(int x)  {
+      cout << "Person::Person(int)..." ;
+   }
+};
+class Faculty : virtual public Person {
+public:
+   Faculty(int x) :Person(x)   {
+      cout << "Faculty::Faculty(int)..." ;
+   }
+};
+class Student : virtual public Person {
+public:
+   Student(int x) :Person(x) {
+      cout << "Student::Student(int)..." ;
+   }
+};
+class TA : public Faculty, public Student  {
+public:
+   TA(int x) : Person(x),Student(x), Faculty(x)   {
+      cout << "TA::TA(int)..." ;
+   }
+};
+int main()  {
+   TA t(30);
+}
+
+  A. Person::Person(int)...Faculty::Faculty(int)...Student::Student(int)...
+  B. Person::Person(int)...Faculty::Faculty(int)...Person::Person(int)...Student::Student(int)...
+  C. Person::Person(int)...Faculty::Faculty(int)...Student::Student(int)...TA::TA(int )...
+  D. Person::Person(int)...Faculty::Faculty(int)...Person::Person(int)...Student::Student(int)...TA::TA(int )...
+
+--- CÂU 24 (ID: 1534810064) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Shape {
+public:
+    Shape(const string& name) : name(name) {}
+    virtual float area() = 0;  
+    void printName() {
+        cout << name ;
+    }
+private:
+    string name;
+};
+class Rectangle : public Shape {
+public:
+    Rectangle(float width, float height) : Shape("Rectangle"), width(width), height(height) {}
+    float area() override {
+        return width * height;
+    }
+private:
+    float width, height;
+};
+class Triangle : public Shape {
+public:
+    Triangle(float base, float height) : Shape("Triangle"), base(base), height(height) {}
+    float area() override {
+        return 0.5 * base * height;
+    }
+private:
+    float base, height;
+};
+int main() {
+    Rectangle rectangle(5, 3);
+    Triangle triangle(4, 6);
+    Shape* shapes[] = { &rectangle, &triangle };
+    for (int i = 0; i < 2; ++i) {
+        shapes[i]->printName();
+        cout << " Area: " << shapes[i]->area()<< "	";
+    }
+    return 0;
+}
+
+  A. Triangle Area: 12
+  B. Rectangle Area: 15
+  C. Triangle Area: 12 Rectangle Area: 15
+  D. Rectangle Area: 15 Triangle Area: 12
+
+--- CÂU 25 (ID: 1926327952) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+template <class T> 
+class Calc{
+public:
+    T multiply(T x, T y);
+    T add(T x, T y);
+};
+template <class T> 
+T Calc<T>::multiply(T x, T y){
+    return x*y;
+}
+template <class T> 
+T Calc<T>::add(T x, T y){
+    return x + y;
+}
+int main () {
+    Calc<int> v;
+    Calc<float> u;
+    cout << v.add(5, 6)<<"..."<<u.multiply(2.0, 5.0);
+}
+
+  A. Lỗi biên dịch do khai báo lớp mẫu sai
+  B. 5...6
+  C. 11...10
+  D. 10...11
+
+--- CÂU 26 (ID: 949611313) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class A {
+public:
+    void dummy() { 
+        cout << "A::dummy..."; 
+    }
+};
+class B : public A {
+public:
+    void dummy() { 
+        cout << "B::dummy..."; 
+    }
+};
+void callAsA(A x) { 
+    x.dummy(); 
+}
+int main(int argc, char **argv) {
+    B b;
+    b.dummy();
+    callAsA(b);
+}
+
+  A. A::dummy...B::dummy...
+  B. B::dummy
+  C. B::dummy...A::dummy...
+  D. A::dummy
+
+--- CÂU 27 (ID: 749284125) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class USBDevice
+{
+private:
+    long id;
+public:
+    USBDevice(long pid) : id(pid){
+    }
+    long getID() { 
+        return id; 
+    }
+};
+class NetworkDevice {
+private:
+    long id;
+public:
+    NetworkDevice(long pid) : id(pid){
+    }
+    long getID() { 
+        return id; 
+    }
+};
+class WirelessAdaptor : public USBDevice, public NetworkDevice{
+public:
+    WirelessAdaptor(long uid, long nid) : USBDevice(uid), NetworkDevice(nid)
+    {
+    }
+};
+int main(){
+    WirelessAdaptor w(123, 456);
+    cout << w.getID(); 
+    return 0;
+}
+
+  A. Lỗi biên dịch tại cout << w.getID();
+  B. 456.
+  C. 123...456
+  D. 123
+
+--- CÂU 28 (ID: 961898002) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì? 
+class Vehicle {
+public:
+    Vehicle(const string& name) : name(name) {}
+    virtual void start() = 0;  
+    virtual void stop() = 0;   
+    void displayInfo() {
+        cout << name;
+    }
+private:
+    string name;
+};
+class Car : public Vehicle {
+public:
+    Car() : Vehicle("Car") {}
+    void start() override {
+        cout << " Starting." ;
+    }
+    void stop() override {
+        cout << " Stopping." ;
+    }
+};
+class Motorcycle : public Vehicle {
+public:
+    Motorcycle() : Vehicle("Motorcycle") {}
+    void start() override {
+        cout << " Starting.";
+    }
+    void stop() override {
+        cout << " Stopping." ;
+    }
+};
+int main() {
+    Car car;
+    Motorcycle motorcycle;
+    Vehicle* vehicles[] = { &car, &motorcycle };
+    for (int i = 0; i < 2; ++i) {
+        vehicles[i]->displayInfo();     
+        vehicles[i]->start();
+        cout << "	";
+    }
+    return 0;
+}
+
+  A. Car Starting.
+  B. Motorcycle Car
+  C. Car Starting. Motorcycle Starting.
+  D. Motorcycle Starting.
+
+--- CÂU 29 (ID: 571378638) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class AA {
+public:
+    virtual void something() { 
+        cout << "AA:something()..."; 
+    }
+};
+class BB : public AA {
+public:
+    void something() {
+        cout << "BB:something()..."; 
+    }
+};
+void byvalue(AA x) {
+    x.something(); 
+}
+void byref(AA &x) { 
+    x.something(); 
+}
+void bypointer(AA *x) {
+    x->something();
+}
+int main(int argc, char **argv) {
+    BB b;
+    byvalue(b);
+    byref(b);
+    bypointer(&b);
+}
+
+  A. BB:something()...
+  B. AA:something()...BB:something()...BB:something()...
+  C. AA:something()...BB:something()...
+  D. AA:something()...
+
+--- CÂU 30 (ID: 1681306676) ---
+Cho chương trình viết bằng ngôn ngữ C++ như sau, khi biên dịch và thực thi chương trình, có kết quả là gì?
+class A{
+public:
+    virtual void x(){
+        cout << "I am Ax...";
+    }
+    void m(){
+        cout << "I am Am...";
+        x();
+    }
+};
+class B : public A{
+public:
+    void x(){
+        cout << "I am Bx...";
+    }
+    void y(){
+        cout << "I am By...";
+        m();
+    }
+};
+void main()
+{
+    B *b = new B();
+    b->y();
+}
+
+  A. I am By...I am Am...I am Bx...
+  B. I am By...I am Bm...
+  C. I am By...I am Ax...I am Bx...
+  D. I am By...I am Bx...
+

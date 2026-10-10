@@ -2,465 +2,178 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ôn Tập Từng Chủ Đề (50 Câu) - Trung Tâm Kỹ Thuật Điện Toán Bách Khoa</title>
-  <link rel="icon" type="image/png" href="assets/logo-bk.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Luyện Tập Trắc Nghiệm OOP 2026 - Trường Cao Đẳng Công Thương TP.HCM</title>
+  <link rel="icon" type="image/png" href="assets/logo-hitc.png">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* ================= SỬA LỖI CUỘN TRANG (CHO PHÉP CUỘN XUỐNG XEM HẾT 6 CHỦ ĐỀ) ================= */
-    html, body {
-      height: auto !important;
-      min-height: 100vh !important;
-      overflow-y: auto !important;
-      overflow-x: hidden !important;
-      background-color: #f4f6f9;
-    }
-
-    /* ================= KIỂU DÁNG CHO TRANG TỔNG QUÁT ÔN TẬP ================= */
-    .overview-wrapper {
-      background-color: #f4f6f9;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
-
-    .overview-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 24px 16px 40px 16px;
-      width: 100%;
-      flex: 1;
-    }
-
-    .overview-hero {
-      background: linear-gradient(135deg, #0288d1 0%, #002f6c 100%);
-      color: #ffffff;
-      padding: 26px 24px;
-      border-radius: 12px;
-      margin-bottom: 24px;
-      box-shadow: 0 4px 15px rgba(2, 136, 209, 0.2);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .overview-hero-text h2 {
-      font-size: 21px;
-      font-weight: 800;
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .overview-hero-text p {
-      font-size: 14px;
-      color: #e0f2fe;
-      line-height: 1.5;
-    }
-
-    .btn-exam-portal {
-      background: linear-gradient(180deg, #ed6c02, #c62828);
-      color: #ffffff !important;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 13.5px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      transition: all 0.2s;
-    }
-    .btn-exam-portal:hover {
-      filter: brightness(1.1);
-      transform: translateY(-1px);
-    }
-
-    .overview-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
-    }
-
-    .topic-card {
-      background: #ffffff;
-      border: 1.5px solid #cfd8dc;
-      border-radius: 10px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.25s ease;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-    }
-
-    .topic-card:hover {
-      border-color: #0288d1;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(2, 136, 209, 0.15);
-    }
-
-    .topic-card.completed {
-      border-color: #81c784;
-      background: #fbfffa;
-    }
-
-    .topic-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .topic-icon {
-      font-size: 32px;
-      line-height: 1;
-      background: #e1f5fe;
-      padding: 10px;
-      border-radius: 10px;
-      flex-shrink: 0;
-    }
-
-    .topic-info h3 {
-      font-size: 16px;
-      font-weight: 800;
-      color: #01579b;
-      margin-bottom: 4px;
-      line-height: 1.35;
-    }
-
-    .topic-code {
-      font-size: 12px;
-      color: #0288d1;
-      font-weight: 700;
-      background: #e0f2fe;
-      padding: 2px 8px;
-      border-radius: 4px;
-      display: inline-block;
-    }
-
-    .topic-desc {
-      font-size: 13.5px;
-      color: #546e7a;
-      line-height: 1.5;
-      margin-bottom: 14px;
-      flex: 1;
-    }
-
-    .topic-status-box {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 6px;
-      padding: 10px 14px;
-      margin-bottom: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 13px;
-    }
-
-    .topic-actions {
-      display: flex;
-      gap: 8px;
-    }
-
-    .btn-start-topic {
-      flex: 1;
-      background: linear-gradient(180deg, #29b6f6 0%, #0288d1 100%);
-      color: #ffffff;
-      border: none;
-      padding: 11px 16px;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 14px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: all 0.2s;
-    }
-    .btn-start-topic:hover {
-      background: linear-gradient(180deg, #4fc3f7 0%, #039be5 100%);
-      box-shadow: 0 3px 8px rgba(2, 136, 209, 0.3);
-    }
-
-    .btn-review-topic {
-      background: #e8f5e9;
-      color: #1b5e20;
-      border: 1px solid #81c784;
-      padding: 11px 14px;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 13px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .btn-review-topic:hover {
-      background: #c8e6c9;
-    }
-
-    /* ================= KIỂU DÁNG CHO WORKSPACE LÀM BÀI 50 CÂU ================= */
-    .active-module-title-badge {
-      background: #e0f2fe;
-      color: #01579b;
-      font-weight: 800;
-      font-size: 13.5px;
-      padding: 4px 10px;
-      border-radius: 6px;
-      border: 1px solid #81d4fa;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .btn-exit-topic {
-      background: #ffffff;
-      border: 1.5px solid #d32f2f;
-      color: #d32f2f;
-      padding: 4px 12px;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 12.5px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      transition: all 0.15s;
-    }
-    .btn-exit-topic:hover {
-      background: #ffebee;
-    }
-
-    .badge-no-timer {
-      background: #e8f5e9;
-      color: #1b5e20;
-      border: 1px solid #81c784;
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-size: 12.5px;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .instant-check-toggle {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #0277bd;
-      cursor: pointer;
-      user-select: none;
-      background: #e1f5fe;
-      padding: 3px 8px;
-      border-radius: 4px;
-      border: 1px solid #81d4fa;
-    }
-    .instant-check-toggle input {
-      cursor: pointer;
-    }
-
-    .practice-workspace-container {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      background: #ffffff;
-      width: 100%;
-    }
-
-    .practice-grid-container {
-      max-height: calc(100vh - 280px);
-      overflow-y: auto;
-      padding-right: 3px;
-    }
-    .practice-grid-container::-webkit-scrollbar {
-      width: 4px;
-    }
-    .practice-grid-container::-webkit-scrollbar-thumb {
-      background: #b0bec5;
-      border-radius: 4px;
-    }
-    .practice-grid-container .questions-grid {
-      grid-template-columns: repeat(5, 1fr);
-      gap: 3px;
-    }
-    .practice-grid-container .q-cell {
-      height: 24px !important;
-      min-height: 24px !important;
-      font-size: 11px !important;
-      border-radius: 3px !important;
-      padding: 0 !important;
-    }
-
-    @media (max-width: 767px) {
-      .practice-grid-container {
-        max-height: none !important;
-      }
-      .practice-grid-container .questions-grid {
-        grid-template-columns: repeat(10, 1fr) !important;
-        gap: 3px !important;
-      }
-      .practice-grid-container .q-cell {
-        min-height: 25px !important;
-        height: 25px !important;
-        font-size: 10.5px !important;
-        border-radius: 3px !important;
-        padding: 0 !important;
-      }
-      .overview-hero {
-        padding: 18px 16px;
-      }
-      .overview-hero-text h2 {
-        font-size: 17px;
-      }
-    }
-  </style>
 </head>
-<body>
+<body class="practice-body">
 
-  <!-- ==========================================================================
-       VIEW 1: MÀN HÌNH TỔNG QUÁT CHỌN CHỦ ĐỀ ÔN TẬP
-       ========================================================================== -->
-  <div id="practice-overview-view" class="overview-wrapper">
-    <!-- Header trường -->
+  <div class="practice-wrapper">
+
+    <!-- HEADER CHÍNH: THANH LỊCH, GỌN GÀNG -->
     <header class="header-container compact-header">
       <div class="header-left">
-        <img src="assets/logo-bk.png" alt="Logo Bách Khoa" class="logo-bk">
-        <div class="header-school-info">
-          <div class="center-title">TRUNG TÂM KỸ THUẬT ĐIỆN TOÁN</div>
-          <div class="school-title">ĐẠI HỌC BÁCH KHOA - TP.HCM</div>
-        </div>
-      </div>
-      <div class="header-right">
-        <a href="index.html" class="btn-exam-portal">🎯 Vào Phòng Thi Thử (30 câu)</a>
-      </div>
-    </header>
-
-    <!-- Nội dung tổng quát 6 chủ đề -->
-    <main class="overview-container">
-      <div class="overview-hero">
-        <div class="overview-hero-text">
-          <h2>📚 DANH SÁCH 6 CHỦ ĐỀ ÔN TẬP (MỖI CHỦ ĐỀ 50 CÂU)</h2>
-          <p>Học sinh vui lòng chọn một chủ đề bên dưới để bắt đầu làm bài. Chế độ ôn tập <strong>không giới hạn thời gian</strong>, có thể xem đáp án ngay hoặc nộp bài để xem điểm.</p>
-        </div>
-      </div>
-
-      <div class="overview-grid" id="topics-grid-container">
-        <!-- 6 thẻ chủ đề sẽ được render động bằng JavaScript -->
-      </div>
-
-      <!-- Footer thông tin chân trang -->
-      <footer style="text-align: center; margin-top: 36px; padding: 20px 10px; color: #78909c; font-size: 13px; border-top: 1px solid #cfd8dc;">
-        TRUNG TÂM KỸ THUẬT ĐIỆN TOÁN - TRƯỜNG ĐẠI HỌC BÁCH KHOA - ĐHQG TP.HCM<br>
-        Hệ thống ôn luyện trắc nghiệm 300 câu hỏi (6 Chuyên đề chuẩn CNTT Căn bản)
-      </footer>
-    </main>
-  </div>
-
-  <!-- ==========================================================================
-       VIEW 2: MÀN HÌNH LÀM BÀI 50 CÂU CỦA CHỦ ĐỀ ĐÃ CHỌN
-       ========================================================================== -->
-  <div id="practice-workspace-view" class="practice-workspace-container" style="display: none;">
-    
-    <!-- HEADER WORKSPACE -->
-    <header class="header-container compact-header">
-      <div class="header-left">
-        <img src="assets/logo-bk.png" alt="Logo Bách Khoa" class="logo-bk">
-        <div class="header-school-info">
-          <div class="center-title">TRUNG TÂM KỸ THUẬT ĐIỆN TOÁN</div>
-          <div class="school-title">ĐẠI HỌC BÁCH KHOA - TP.HCM</div>
-        </div>
+        <a href="index.html" class="header-logo-link">
+          <img src="assets/logo-hitc.png" alt="Logo Trường Cao Đẳng Công Thương TP.HCM" class="logo-bk">
+          <div class="header-school-info">
+            <div class="center-title">TRƯỜNG CAO ĐẲNG CÔNG THƯƠNG TP.HCM</div>
+            <div class="school-title">KHOA CÔNG NGHỆ THÔNG TIN (HITC)</div>
+            <div class="school-sub">LUYỆN TẬP TRẮC NGHIỆM OOP 2026</div>
+          </div>
+        </a>
       </div>
 
       <div class="header-right">
-        <!-- Tên Module -->
-        <div id="workspace-module-title" class="active-module-title-badge">📘 Module 1: CNTT Cơ bản</div>
-
-        <!-- Cụm Câu hỏi & Nút Đặt cờ -->
-        <div id="header-controls-container" class="header-flag-box">
-          <!-- Render động bằng JS: [Câu X/50] [🚩 Đặt cờ] -->
-        </div>
-
-        <!-- Chế độ xem ngay -->
-        <label class="instant-check-toggle" title="Khi bật, hệ thống sẽ báo đúng/sai và hiện giải thích ngay khi bạn bấm chọn đáp án">
-          <input type="checkbox" id="chk-instant-mode">
-          <span>👁️ Xem đáp án ngay</span>
-        </label>
-
-        <!-- Nút Đổi chủ đề & Nút Thi thử -->
-        <button id="btn-header-exit-topic" class="btn-exit-topic" title="Kết thúc chủ đề này và quay lại danh sách chọn chủ đề mới">
-          <span>✕ Đổi chủ đề</span>
-        </button>
-
-        <a href="index.html" class="btn-goto-practice" style="background:#e3f2fd; color:#0d47a1 !important; border-color:#90caf9;" title="Vào thi thử 30 câu">
-          🎯 Thi thử
+        <a href="index.html" class="btn-goto-exam-link" title="Chuyển sang làm bài thi trắc nghiệm bấm giờ">
+          🎯 Vào Thi Thử (30/60/90 câu)
         </a>
       </div>
     </header>
 
-    <!-- WORKSPACE CHÍNH -->
-    <main class="main-workspace">
+    <!-- MÀN HÌNH 1: DANH MỤC 6 CHƯƠNG ÔN TẬP KHOA HỌC -->
+    <main id="overview-screen" class="overview-container">
       
-      <!-- CỘT TRÁI: 50 CÂU HỎI & CÁC NÚT TÁC VỤ -->
-      <aside class="left-sidebar">
-        <div class="mobile-sidebar-heading" id="sidebar-heading-text">📋 Bảng 50 câu hỏi:</div>
-        
-        <!-- Khung chứa 50 ô câu hỏi -->
-        <div class="practice-grid-container">
-          <div id="questions-grid" class="questions-grid">
-            <!-- 50 ô câu hỏi sẽ được sinh động bằng JS -->
-          </div>
+      <!-- Hero Banner tinh tế -->
+      <div class="practice-hero-card">
+        <div class="hero-left-content">
+          <span class="hero-tag">📚 NGÂN HÀNG ÔN TẬP CHÍNH THỨC</span>
+          <h2>LUYỆN TẬP TRẮC NGHIỆM OOP 6 CHƯƠNG</h2>
+          <p>
+            Trọn bộ 360 câu hỏi từ 6 Google Forms chính thức (C++ Lớp, Kế thừa, Đa hình, OOP C# và OOP Java).
+            Tự động chấm điểm, hiển thị giải thích chi tiết ngay khi chọn phương án.
+          </p>
         </div>
-
-        <!-- Cụm nút nộp bài, làm lại và đổi chủ đề -->
-        <div class="left-sidebar-footer">
-          <button id="btn-submit-exam" class="btn-submit-exam">Kiểm tra & Nộp bài Chủ đề này</button>
-          <button id="btn-retake-sidebar" class="btn-exit-app" style="display: none; background: #e0f2fe; color: #01579b; border-color: #81d4fa; font-weight: bold;">Làm lại Chủ đề này</button>
-          <button id="btn-sidebar-exit-topic" class="btn-exit-app">Đổi sang chủ đề khác</button>
-          <div style="font-size: 13px; font-weight: 700; color: #2e7d32; text-align: center; margin-top: 4px;">
-            ÔN TẬP TỰ DO - KHÔNG ĐẾM GIỜ
-          </div>
-          <div class="app-version">v 1.8.5 - Chế độ Học tập</div>
+        <div class="hero-stats-badge">
+          <div class="hero-stat-num" id="hero-total-answered">0/360</div>
+          <div class="hero-stat-label">Câu hỏi đã hoàn thành</div>
         </div>
-      </aside>
+      </div>
 
-      <!-- CỘT PHẢI: KHU VỰC CÂU HỎI VÀ ĐÁP ÁN -->
-      <section class="right-workspace">
-        <!-- Khung hiển thị câu hỏi (Trên) -->
-        <div id="question-box" class="question-box">
-          <!-- Nội dung câu hỏi -->
-        </div>
-
-        <!-- Thanh phân cách 3 chấm nhỏ -->
-        <div class="section-divider-dots">...</div>
-
-        <!-- Khung hiển thị các đáp án (Dưới) -->
-        <div id="options-box" class="options-box">
-          <!-- 4 lựa chọn A, B, C, D -->
-        </div>
-
-        <!-- Thanh điều hướng câu trước / câu tiếp theo -->
-        <div id="bottom-nav-bar" class="bottom-nav-bar">
-          <!-- Render động bằng JS -->
-        </div>
-      </section>
+      <!-- Lưới 6 chương trực quan, không bị rối -->
+      <div class="overview-grid" id="modules-cards-container">
+        <!-- Render 6 thẻ chương qua JS -->
+      </div>
 
     </main>
 
+    <!-- MÀN HÌNH 2: KHÔNG GIAN HỌC TẬP TẬP TRUNG (PRACTICE WORKSPACE) -->
+    <div id="practice-screen" class="practice-workspace-container" style="display: none;">
+      
+      <!-- THANH ĐIỀU HƯỚNG SUB-HEADER KHOA HỌC, GỌN GÀNG -->
+      <nav class="practice-top-nav">
+        <!-- Bên trái: Nút quay lại & Tiêu đề chương -->
+        <div class="top-nav-left">
+          <button id="btn-back-overview" class="btn-nav-back" title="Quay lại danh mục 6 chương">
+            ◀ 6 Chương
+          </button>
+          <div class="active-module-pill" id="active-module-label">
+            Chương 1: Tổng quan OOP
+          </div>
+        </div>
+
+        <!-- Ở giữa: Segmented Control chuyển đổi chế độ học (3 chế độ rõ ràng) -->
+        <div class="segmented-control" role="tablist">
+          <button id="tab-mode-single" class="segmented-btn active" role="tab" title="Luyện từng câu: Chọn đáp án xem giải thích chi tiết ngay">
+            🎯 Luyện từng câu
+          </button>
+          <button id="tab-mode-all" class="segmented-btn" role="tab" title="Luyện tất cả các câu: Làm bài trọn vẹn toàn bộ chương, nộp bài tính điểm">
+            📝 Luyện tất cả (<span id="all-count-badge">80</span> câu)
+          </button>
+          <button id="tab-mode-list" class="segmented-btn" role="tab" title="Xem danh sách: Đọc toàn bộ câu hỏi và đáp án dạng cuộn">
+            📜 Xem danh sách
+          </button>
+        </div>
+
+        <!-- Bên phải: Nút nộp bài chương, Thống kê, Bộ lọc & Bật tắt lưới -->
+        <div class="top-nav-right">
+          <button id="btn-submit-chapter" class="btn-submit-chapter" style="display: none;" title="Nộp bài và chấm điểm toàn bộ câu hỏi của chương">
+            🏁 Nộp bài chương
+          </button>
+          <div class="stat-badge" id="practice-quick-stats">
+            Tiến độ: 0/80
+          </div>
+          <select id="filter-select" class="nav-filter-select" title="Lọc câu hỏi">
+            <option value="all">Tất cả câu</option>
+            <option value="unanswered">Chưa làm</option>
+            <option value="wrong">Câu sai</option>
+            <option value="correct">Câu đúng</option>
+          </select>
+          <button id="btn-toggle-grid" class="btn-toggle-grid" title="Ẩn/Hiện lưới số câu hỏi">
+            📋 Lưới câu hỏi
+          </button>
+        </div>
+      </nav>
+
+      <!-- KHUNG BỐ CỤC CHÍNH -->
+      <div class="practice-main-layout">
+
+        <!-- CỘT BÊN: LƯỚI SỐ CÂU HỎI (CÓ THỂ BẬT/TẮT ĐỂ MỞ RỘNG VÙNG NHÌN) -->
+        <aside class="practice-sidebar" id="practice-sidebar">
+          <div class="sidebar-header">
+            <span>DANH SÁCH CÂU HỎI</span>
+            <button id="btn-reset-module" class="btn-sidebar-reset" title="Xóa kết quả đã làm của chương này để ôn lại từ đầu">
+              🔄 Làm lại
+            </button>
+          </div>
+          <div class="questions-grid-wrapper">
+            <div id="practice-questions-grid" class="questions-grid">
+              <!-- Render ô số 1..80 -->
+            </div>
+          </div>
+          <div class="sidebar-legend">
+            <span class="legend-item"><span class="dot dot-unanswered"></span> Chưa làm</span>
+            <span class="legend-item"><span class="dot dot-correct"></span> Đúng</span>
+            <span class="legend-item"><span class="dot dot-wrong"></span> Sai</span>
+          </div>
+        </aside>
+
+        <!-- VÙNG NỘI DUNG CHÍNH (CÂU HỎI VÀ PHƯƠNG ÁN) -->
+        <main class="practice-content-area">
+
+          <!-- CHẾ ĐỘ 1: LUYỆN TỪNG CÂU (2 CỘT TẬP TRUNG, HIỆN ĐẠI) -->
+          <div id="single-question-view" class="practice-single-container">
+            
+            <!-- Cột trái: Đề bài & Code Snippet -->
+            <div class="practice-q-pane">
+              <div class="pane-header">
+                <span class="q-badge-num" id="practice-q-header-num">Câu 1 / 80</span>
+                <span class="q-module-tag" id="practice-q-tag">OOP C++</span>
+              </div>
+              <div id="practice-question-box" class="pane-scroll-body">
+                <!-- Nội dung câu hỏi và code render động -->
+              </div>
+            </div>
+
+            <!-- Cột phải: 4 Phương án A, B, C, D & Lời giải & Điều hướng ngay dưới câu D -->
+            <div class="practice-a-pane">
+              <div class="pane-header">
+                <span class="pane-title">PHƯƠNG ÁN TRẢ LỜI</span>
+                <span class="pane-sub-hint">Chọn đáp án để xem giải thích</span>
+              </div>
+              <div id="practice-options-box" class="pane-scroll-body pane-options-body">
+                <!-- 4 Options card + Giải thích + Nút điều hướng sát dưới câu D -->
+              </div>
+            </div>
+
+          </div>
+
+          <!-- CHẾ ĐỘ 2: LUYỆN TỔNG SỐ CÂU (DANH SÁCH CUỘN GỌN GÀNG) -->
+          <div id="list-questions-view" class="practice-list-container" style="display: none;">
+            <!-- Render danh sách toàn bộ câu hỏi -->
+          </div>
+
+        </main>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <!-- Nạp dữ liệu 300 câu hỏi chính thức từ 6 Google Forms -->
+  <!-- Nạp ngân hàng câu hỏi 360 câu -->
   <script src="js/questions.js"></script>
-  <!-- Nạp mã nguồn logic ôn tập chuyên đề -->
+  <!-- Nạp logic học thực hành -->
   <script src="js/practice.js"></script>
 </body>
 </html>
