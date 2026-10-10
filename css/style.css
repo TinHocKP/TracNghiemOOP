@@ -985,26 +985,37 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.45);
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  padding: 12px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-dialog {
   background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  width: 90%;
-  max-width: 540px;
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+  width: 95%;
+  max-width: 560px;
+  max-height: 90vh;
+  max-height: 90dvh;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   animation: fadeIn 0.2s ease-out;
+  margin: auto;
 }
 
 .modal-header {
+  flex-shrink: 0;
   background: linear-gradient(90deg, #0288d1, #29b6f6);
   color: #ffffff;
   padding: 12px 18px;
@@ -1015,20 +1026,27 @@ body {
 
 .modal-header h4 {
   margin: 0;
-  font-size: 16px;
+  font-size: 15.5px;
+  font-weight: 700;
 }
 
 .modal-body {
-  padding: 20px;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px 18px;
   font-size: 14.5px;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 .modal-footer {
+  flex-shrink: 0;
   padding: 12px 18px;
   background: #f8fafc;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 10px;
   border-top: 1px solid #e2e8f0;
 }
@@ -1169,6 +1187,11 @@ body {
     padding: 2px 6px;
   }
 
+  .btn-select-package {
+    font-size: 11px;
+    padding: 2px 7px;
+  }
+
   .btn-goto-practice {
     font-size: 11px;
     padding: 2px 7px;
@@ -1184,9 +1207,65 @@ body {
   /* Đưa phần nội dung câu hỏi lên ĐẦU TIÊN (order: 1) */
   .right-workspace {
     order: 1;
-    padding: 10px 10px 6px 10px;
+    padding: 8px 8px 6px 8px;
     width: 100%;
     flex: none;
+    box-sizing: border-box;
+  }
+
+  /* Bố cục 2 cột chuyển thành 1 cột xếp dọc trên điện thoại */
+  .exam-workspace-split {
+    flex-direction: column !important;
+    gap: 10px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  .question-column {
+    width: 100% !important;
+    flex: none !important;
+    max-height: none !important;
+    min-height: 100px !important;
+    border-radius: 8px !important;
+  }
+
+  .question-column-header {
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+  }
+
+  .question-content-box {
+    padding: 12px 14px !important;
+    font-size: 14.5px !important;
+    max-height: 40vh !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .options-column {
+    width: 100% !important;
+    flex: none !important;
+    overflow: visible !important;
+    border-radius: 8px !important;
+  }
+
+  .options-header-title {
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+  }
+
+  .options-list-box {
+    padding: 10px 12px !important;
+    gap: 8px !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+  }
+
+  .option-card {
+    padding: 10px 12px !important;
+    min-height: 44px !important;
+    font-size: 14px !important;
   }
 
   .question-box {
@@ -1352,21 +1431,62 @@ body {
   }
 
   /* Popup / Modal trên điện thoại */
+  .modal-overlay {
+    padding: 8px !important;
+    align-items: center !important;
+  }
+
   .modal-dialog {
-    width: 95%;
-    max-width: 440px;
-    max-height: 85vh;
-    border-radius: 10px;
+    width: 98% !important;
+    max-width: 480px !important;
+    max-height: 94vh !important;
+    max-height: 94dvh !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin: auto !important;
+  }
+
+  .modal-header {
+    padding: 10px 14px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .modal-header h4 {
+    font-size: 13.5px !important;
+    line-height: 1.3 !important;
   }
 
   .modal-body {
-    padding: 14px 16px;
-    font-size: 14px;
+    padding: 12px 14px !important;
+    font-size: 13.5px !important;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 
   .modal-body input {
-    font-size: 16px !important; /* Tránh iOS Safari tự động zoom trang khi chạm vào input */
-    padding: 10px !important;
+    font-size: 15px !important;
+    padding: 8px 10px !important;
+  }
+
+  .modal-footer {
+    padding: 10px 14px !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+    background: #f8fafc !important;
+  }
+
+  .modal-footer button {
+    padding: 10px 14px !important;
+    font-size: 14px !important;
+    min-height: 42px !important;
+  }
+
+  #pkg-btn-start {
+    flex: 1 !important;
+    font-weight: 700 !important;
   }
 
   .result-summary-pane {
@@ -1435,7 +1555,48 @@ body {
 
 @media (max-width: 600px) {
   .package-cards-grid {
-    grid-template-columns: 1fr;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin: 8px 0 !important;
+  }
+
+  .package-card {
+    padding: 8px 12px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    text-align: left !important;
+    border-radius: 8px !important;
+    min-height: 46px !important;
+  }
+
+  .package-card .package-title {
+    font-size: 15px !important;
+    margin: 0 !important;
+    min-width: 65px !important;
+    flex-shrink: 0;
+    color: #0f172a !important;
+  }
+
+  .package-card .package-desc {
+    margin: 0 !important;
+    padding: 4px 6px !important;
+    font-size: 11px !important;
+    flex: 1 !important;
+    line-height: 1.3 !important;
+    text-align: left !important;
+    border-radius: 4px !important;
+  }
+
+  .package-card .package-badge-duration {
+    margin: 0 !important;
+    white-space: nowrap !important;
+    font-size: 11px !important;
+    padding: 3px 7px !important;
+    flex-shrink: 0 !important;
   }
 }
 
@@ -1502,6 +1663,88 @@ body {
 .package-card.selected .package-desc {
   background: #e0f2fe;
   color: #0369a1;
+}
+
+.pkg-modal-dialog {
+  max-width: 620px;
+}
+
+.pkg-student-box {
+  background: #f8fafc;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  margin-top: 12px;
+}
+
+.pkg-student-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.pkg-student-grid label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #334155;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.pkg-student-grid input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 13.5px;
+  box-sizing: border-box;
+}
+
+.btn-pkg-cancel {
+  background: #e2e8f0;
+  color: #334155;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-pkg-start {
+  padding: 10px 24px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .pkg-student-box {
+    padding: 8px 10px;
+    margin-top: 8px;
+  }
+
+  .pkg-student-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .pkg-student-grid label {
+    font-size: 11.5px;
+    margin-bottom: 2px;
+  }
+
+  .pkg-student-grid input {
+    padding: 6px 8px;
+    font-size: 13.5px;
+  }
+
+  .btn-pkg-cancel {
+    padding: 9px 14px !important;
+    font-size: 13.5px !important;
+  }
+
+  .btn-pkg-start {
+    flex: 1 !important;
+    padding: 9px 14px !important;
+    font-size: 14px !important;
+  }
 }
 
 /* Nút chọn gói thi trên header */

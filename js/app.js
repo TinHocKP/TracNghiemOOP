@@ -570,7 +570,7 @@
     modal.className = 'modal-overlay';
 
     modal.innerHTML = `
-      <div class="modal-dialog" style="max-width: 620px;">
+      <div class="modal-dialog pkg-modal-dialog">
         <div class="modal-header">
           <h4>🎯 LỰA CHỌN PHƯƠNG ÁN THI TRẮC NGHIỆM OOP</h4>
           <span style="cursor:pointer;" id="pkg-modal-close">&times;</span>
@@ -585,7 +585,7 @@
             <div class="package-card ${appState.selectedPackage === 30 ? 'selected' : ''}" data-pkg="30">
               <span class="package-badge-duration">⏱️ 30 phút</span>
               <div class="package-title">30 CÂU</div>
-              <div class="package-desc" style="text-align: center; font-weight: 600; padding: 10px;">
+              <div class="package-desc">
                 Đề thi trắc nghiệm trọng tâm OOP 2026
               </div>
             </div>
@@ -594,7 +594,7 @@
             <div class="package-card ${appState.selectedPackage === 60 ? 'selected' : ''}" data-pkg="60">
               <span class="package-badge-duration">⏱️ 60 phút</span>
               <div class="package-title">60 CÂU</div>
-              <div class="package-desc" style="text-align: center; font-weight: 600; padding: 10px;">
+              <div class="package-desc">
                 Đề thi trắc nghiệm học phần toàn diện
               </div>
             </div>
@@ -603,29 +603,29 @@
             <div class="package-card ${appState.selectedPackage === 90 ? 'selected' : ''}" data-pkg="90">
               <span class="package-badge-duration">⏱️ 90 phút</span>
               <div class="package-title">90 CÂU</div>
-              <div class="package-desc" style="text-align: center; font-weight: 600; padding: 10px;">
+              <div class="package-desc">
                 Đề thi trắc nghiệm chuyên sâu & nâng cao
               </div>
             </div>
           </div>
 
-          <div style="background: #f8fafc; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; margin-top: 10px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <div class="pkg-student-box">
+            <div class="pkg-student-grid">
               <div>
-                <label style="font-size: 12.5px; font-weight: 700; color: #334155; display: block; margin-bottom: 4px;">Họ và Tên:</label>
-                <input type="text" id="input-student-name" value="${escapeHtml(appState.studentName)}" style="width: 100%; padding: 7px 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13.5px;">
+                <label>Họ và Tên:</label>
+                <input type="text" id="input-student-name" value="${escapeHtml(appState.studentName)}">
               </div>
               <div>
-                <label style="font-size: 12.5px; font-weight: 700; color: #334155; display: block; margin-bottom: 4px;">Mã số sinh viên (MSSV):</label>
-                <input type="text" id="input-student-id" value="${escapeHtml(appState.studentId)}" style="width: 100%; padding: 7px 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13.5px;">
+                <label>Mã số sinh viên (MSSV):</label>
+                <input type="text" id="input-student-id" value="${escapeHtml(appState.studentId)}">
               </div>
             </div>
           </div>
         </div>
 
         <div class="modal-footer">
-          <button id="pkg-btn-cancel" class="btn-action-center" style="background: #e2e8f0; color: #333;">Đóng</button>
-          <button id="pkg-btn-start" class="btn-action-center btn-next" style="padding: 10px 24px; font-size: 15px;">
+          <button id="pkg-btn-cancel" class="btn-action-center btn-pkg-cancel">Đóng</button>
+          <button id="pkg-btn-start" class="btn-action-center btn-next btn-pkg-start">
             🚀 Bắt đầu làm bài thi
           </button>
         </div>
